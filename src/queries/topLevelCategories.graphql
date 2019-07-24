@@ -1,0 +1,9 @@
+query {
+  category(id:2) {
+    children {
+      url_key
+      id
+      name
+    }
+  }
+}

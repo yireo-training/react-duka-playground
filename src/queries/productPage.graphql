@@ -1,0 +1,33 @@
+query ProductPage($url_key: String) {
+  products(filter: {url_key: {like: $url_key}}) {
+    items {
+      id
+      name
+      sku
+      created_at
+      description {
+        __html:html
+      }
+      country_of_manufacture
+      fashion_material
+      image {
+        label
+        url
+      }
+      media_gallery_entries {
+        content {
+          base64_encoded_data
+        }
+      }
+      stock_status
+      price {
+        regularPrice {
+          amount {
+            currency
+            value
+          }
+        }
+      }
+    }
+  }
+}
