@@ -1,10 +1,10 @@
 import React from "react";
 import { Route, Switch } from "react-router";
-import HomePage from "../Page/HomePage";
-import CheckoutPage from "../Page/CheckoutPage";
-import CartPage from "../Page/CartPage";
-import CatalogPage from "../Page/CatalogPage";
-import NotFoundPage from "../Page/NotFoundPage";
+import HomePage from "../Pages/HomePage";
+import CheckoutPage from "../Pages/CheckoutPage";
+import CartPage from "../Pages/CartPage";
+import CatalogPage from "../Pages/CatalogPage";
+import NotFoundPage from "../Pages/NotFoundPage";
 
 const Content = () => {
   return (
