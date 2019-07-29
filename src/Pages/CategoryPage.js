@@ -2,14 +2,14 @@ import React from "react";
 import { Query } from "react-apollo";
 import Loading from "../Utils/Loading";
 import ProductGrid from "../Molecules/ProductGrid";
-import { loader as gqlLoader } from "graphql.macro";
+import { loader } from "graphql.macro";
 import Image from "react-bootstrap/Image";
 import ErrorPage from "./ErrorPage";
 
 const categoryImageUrl = "http://m2.betelgeuse.yr/media/catalog/category/";
 
 const CategoryPage = props => {
-  const categoryPageQuery = gqlLoader("../queries/categoryPage.graphql");
+  const categoryPageQuery = loader("src/state/graphql/queries/categoryPage.graphql");
 
   return (
     <Query query={categoryPageQuery} variables={{ id: props.id }}>

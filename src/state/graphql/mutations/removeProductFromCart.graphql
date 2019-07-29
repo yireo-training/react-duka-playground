@@ -1,0 +1,26 @@
+mutation {  
+    addSimpleProductsToCart(
+      input: {
+        cart_id: "{ CART_ID }"
+        cart_items: [
+          {
+            data: {
+              quantity: 1
+              sku: "simple-product"
+            }
+          }
+        ]
+      }
+    ) {
+      cart {
+        items {
+          id
+          product {
+            sku
+            stock_status
+          }
+          quantity
+        }
+      }
+    }
+  }

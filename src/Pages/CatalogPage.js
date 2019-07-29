@@ -1,14 +1,15 @@
 import React from "react";
 import { Query } from "react-apollo";
 import Loading from "../Utils/Loading";
-import { loader as gqlLoader } from "graphql.macro";
 import NotFoundPage from "./NotFoundPage";
 import ErrorPage from "./ErrorPage";
 import CategoryPage from "./CategoryPage";
 import ProductPage from "./ProductPage";
+import { loader } from "graphql.macro";
 
 const CatalogPage = props => {
-  const resolveCategoryUrlToIdQuery = gqlLoader("../queries/resolveCatalogUrlToId.graphql");
+
+  const resolveCategoryUrlToIdQuery = loader("src/state/graphql/queries/resolveCatalogUrlToId.graphql");
   const catalogUrl = props.match.url;
   return (
     <div className="CatalogPage">

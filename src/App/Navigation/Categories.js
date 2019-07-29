@@ -1,9 +1,9 @@
 import React from "react";
 import { Query } from "react-apollo";
-import { loader as gqlLoader } from "graphql.macro";
 import Nav from "react-bootstrap/Nav";
+import { loader } from "graphql.macro";
 
-const categoriesQuery = gqlLoader("../../queries/topLevelCategories.graphql");
+const categoriesQuery = loader("../../state/graphql/queries/topLevelCategories.graphql");
 
 const Categories = () => {
   return (
