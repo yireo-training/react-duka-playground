@@ -1,15 +1,15 @@
 import React from "react";
-import Nav from "react-bootstrap/Nav";
+import { Link } from "react-router-dom";
 import Badge from "react-bootstrap/Badge";
 import { connect } from "react-redux"
 import cartActions from "../../state/redux/ducks/cart/actions";
 
 const MiniCart = (props) => {
   return (
-    <Nav.Link href="/cart">
+    <Link to="/cart" className="nav-link" role="button">Checkout
       Cart
       {props.cart.id && <Badge variant="primary">{props.cart.items.length}</Badge>}
-    </Nav.Link>
+    </Link>
   );
 };
 

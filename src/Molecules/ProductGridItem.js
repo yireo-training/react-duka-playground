@@ -2,6 +2,7 @@ import React from "react";
 import Image from "react-bootstrap/Image";
 import Price from "../Atoms/Product/Price";
 import AddToCart from "../Atoms/Product/AddToCart";
+import { Link } from "react-router-dom";
 
 const Product = props => {
   if (props.product === undefined) {
@@ -9,14 +10,19 @@ const Product = props => {
   }
 
   const product = props.product;
+  const productLink = product.url_key + ".html";
 
   return (
     <div className="Product">
       {product.small_image && (
-        <Image alt={product.name} src={product.small_image.url} fluid />
+        <Link to={productLink}>
+          <Image alt={product.name} src={product.small_image.url} fluid />
+        </Link>
       )}
 
-      <a href={product.url_key + ".html"}><h5>{product.name}</h5></a>
+      <Link to={productLink}>
+        <h5>{product.name}</h5>
+      </Link>
       <code>{product.sku}</code>
 
       {product.description && (

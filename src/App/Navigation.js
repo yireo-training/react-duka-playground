@@ -6,13 +6,16 @@ import Button from "react-bootstrap/Button";
 import Categories from "./Navigation/Categories";
 import MiniCart from "./Navigation/MiniCart";
 import CustomerLogin from "./Navigation/CustomerLogin";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   return (
     <div className="Navigation">
       <Nav className="justify-content-end" activeKey="/home">
         <Nav.Item>
-          <Nav.Link href="/checkout">Checkout</Nav.Link>
+          <Link to="/checkout" className="nav-link" role="button">
+            Checkout
+          </Link>
         </Nav.Item>
         <Nav.Item>
           <CustomerLogin />
@@ -21,8 +24,10 @@ const Navigation = () => {
           <MiniCart />
         </Nav.Item>
       </Nav>
-      <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="/">ApolloPlayground</Navbar.Brand>
+      <Navbar bg="dark" variant="dark" expand="lg">
+        <Link to="/" className="navbar-brand" role="button">
+          Apollo<span style={{ color: "lightblue" }}>Playground</span>
+        </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">

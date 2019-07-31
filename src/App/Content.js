@@ -8,6 +8,7 @@ import CatalogPage from "../Pages/CatalogPage";
 import NotFoundPage from "../Pages/NotFoundPage";
 import MessagesTest from "../Test/MessagesTest";
 import Messages from "../Molecules/Messages";
+import "./Content.css";
 
 const Content = () => {
   return (

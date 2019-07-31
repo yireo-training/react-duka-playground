@@ -1,9 +1,11 @@
 import React from "react";
 import { Query } from "react-apollo";
-import Nav from "react-bootstrap/Nav";
+import { Link } from "react-router-dom";
 import { loader } from "graphql.macro";
 
-const categoriesQuery = loader("../../state/graphql/queries/topLevelCategories.graphql");
+const categoriesQuery = loader(
+  "../../state/graphql/queries/topLevelCategories.graphql"
+);
 
 const Categories = () => {
   return (
@@ -19,7 +21,14 @@ const Categories = () => {
           return (
             <>
               {categories.map(category => (
-                <Nav.Link key={category.url_key} href={category.url_key + ".html"}>{category.name}</Nav.Link>
+                <Link
+                  key={category.url_key}
+                  to={category.url_key + ".html"}
+                  className="nav-link"
+                  role="button"
+                >
+                  {category.name}
+                </Link>
               ))}
             </>
           );
