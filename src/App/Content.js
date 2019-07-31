@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router";
 import HomePage from "../Pages/HomePage";
+import CustomerPage from "../Pages/CustomerPage";
 import CheckoutPage from "../Pages/CheckoutPage";
 import CartPage from "../Pages/CartPage";
 import CatalogPage from "../Pages/CatalogPage";
@@ -15,6 +16,7 @@ const Content = () => {
 
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route path="/customer" component={CustomerPage} />
         <Route path="/checkout" component={CheckoutPage} />
         <Route path="/cart" component={CartPage} />
         <Route path="/:url_key.html" component={CatalogPage} />

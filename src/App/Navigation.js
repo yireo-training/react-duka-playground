@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Categories from "./Navigation/Categories";
 import MiniCart from "./Navigation/MiniCart";
+import CustomerLogin from "./Navigation/CustomerLogin";
 
 const Navigation = () => {
   return (
@@ -12,6 +13,9 @@ const Navigation = () => {
       <Nav className="justify-content-end" activeKey="/home">
         <Nav.Item>
           <Nav.Link href="/checkout">Checkout</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <CustomerLogin />
         </Nav.Item>
         <Nav.Item>
           <MiniCart />
