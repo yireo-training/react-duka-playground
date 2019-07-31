@@ -3,7 +3,8 @@ import { loader } from "graphql.macro";
 import actions from "../actions";
 
 const getCartId = async store => {
-  if (store.id) return store.id;
+  const currentState = store.getState();
+  if (currentState.cart && currentState.cart.id) return currentState.cart.id;
 
   const { data } = await apolloClient.mutate({
     mutation: loader("../../../../graphql/mutations/createEmptyCart.graphql")

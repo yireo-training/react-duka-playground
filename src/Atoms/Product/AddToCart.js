@@ -1,14 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import { connect } from "react-redux"
 import actions from "../../state/redux/ducks/cart/actions";
 
 const AddToCart = props => {
   const product = props.product;
+  const [disabled, setDisabled] = useState(false);
+  const [label, setLabel] = useState('Add to cart');
+  
+  const onClick = () => {
+    setDisabled(true);
+    setLabel('Adding to cart ...');
+    props.onClick(product.sku, 1);
+  }
+
   return (
     <>
-      <Button variant="primary" onClick={() => props.onClick(product.sku, 1)}>
-        Add to cart
+      <Button variant="primary" onClick={onClick} disabled={disabled}>
+        {label}
       </Button>
     </>
   );

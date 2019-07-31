@@ -5,6 +5,7 @@ query ProductPage($url_key: String) {
       name
       sku
       created_at
+      stock_status
       description {
         __html:html
       }

@@ -1,0 +1,39 @@
+query myCart($cartId: String!) {
+  cart(cart_id: $cartId) {
+    items {
+      id
+      product {
+        url_key
+        id
+        sku
+        name
+      }
+      quantity
+    }
+    prices {
+      applied_taxes {
+        amount {
+          currency
+          value
+        }
+        label
+      }
+      grand_total {
+        currency
+        value
+      }
+      subtotal_excluding_tax {
+        currency
+        value
+      }
+      subtotal_including_tax {
+        currency
+        value
+      }
+      subtotal_with_discount_excluding_tax {
+        currency
+        value
+      }
+    }
+  }
+}

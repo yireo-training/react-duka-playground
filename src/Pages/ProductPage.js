@@ -7,6 +7,9 @@ import ErrorPage from "./ErrorPage";
 import NotFoundPage from "./NotFoundPage";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import AddToCart from "../Atoms/Product/AddToCart";
+import StockStatus from "../Atoms/Product/StockStatus";
+import Price from "../Atoms/Product/Price";
 
 const ProductPage = props => {
   const productPageQuery = loader("src/state/graphql/queries/productPage.graphql");
@@ -36,6 +39,10 @@ const ProductPage = props => {
               </Col>
               <Col>
                 <h1>{product.name}</h1>
+
+                <Price product={product} />
+                <StockStatus product={product} />
+                <AddToCart product={product} />
 
                 {product.description && (
                   <p dangerouslySetInnerHTML={product.description} />

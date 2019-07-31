@@ -8,6 +8,7 @@ query CategoryPage($id:Int) {
           id
           sku
           name
+          stock_status
           small_image {
             label
             url

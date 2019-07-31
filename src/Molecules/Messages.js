@@ -16,6 +16,7 @@ const Messages = props => {
           text={message.text}
           type={message.type}
           onClose={() => props.onMessageClose(message.text)}
+          autoClose
         />
       ))}
     </>
