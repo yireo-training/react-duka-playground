@@ -3,8 +3,8 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import Badge from "react-bootstrap/Badge";
 import Categories from "./Navigation/Categories";
+import MiniCart from "./Navigation/MiniCart";
 
 const Navigation = () => {
   return (
@@ -14,9 +14,7 @@ const Navigation = () => {
           <Nav.Link href="/checkout">Checkout</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href="/cart">
-            Cart <Badge variant="primary">0</Badge>
-          </Nav.Link>
+          <MiniCart />
         </Nav.Item>
       </Nav>
       <Navbar bg="light" expand="lg">

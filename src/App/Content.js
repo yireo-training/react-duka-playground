@@ -5,10 +5,14 @@ import CheckoutPage from "../Pages/CheckoutPage";
 import CartPage from "../Pages/CartPage";
 import CatalogPage from "../Pages/CatalogPage";
 import NotFoundPage from "../Pages/NotFoundPage";
+import Messages from "../Test/MessagesTest";
+import MessagesTest from "../Molecules/Messages";
 
 const Content = () => {
   return (
     <div className="Content">
+      <Messages/>
+
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/checkout" component={CheckoutPage} />
@@ -16,6 +20,8 @@ const Content = () => {
         <Route path="/:url_key.html" component={CatalogPage} />
         <Route component={NotFoundPage} />
       </Switch>
+
+      <MessagesTest />
     </div>
   );
 };

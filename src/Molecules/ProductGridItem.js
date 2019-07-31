@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "react-bootstrap/Image";
-import Button from "react-bootstrap/Button";
 import Price from "../Atoms/Product/Price";
+import AddToCart from "../Atoms/Product/AddToCart";
 
 const Product = props => {
   if (props.product === undefined) {
@@ -24,7 +24,7 @@ const Product = props => {
       )}
 
       <Price product={product} />
-      <Button variant="primary">Add to cart</Button>
+      <AddToCart product={product} />
     </div>
   );
 };

@@ -1,6 +1,10 @@
 // Action Creators
 import types from "./types";
 
+const setCartId = cartId => {
+  return { type: types.SET_CART_ID, cartId: cartId };
+};
+
 const updateCart = () => {
   return { type: types.UPDATE_CART };
 };
@@ -9,16 +13,24 @@ const fetchCart = () => {
   return { type: types.FETCH_CART };
 };
 
-const addProduct = (productId, qty) => {
-  return { type: types.ADD_PRODUCT, productId: productId, qty: qty };
+const addProduct = (productSku, qty) => {
+  if (!qty > 0) qty = 1;
+  return { type: types.ADD_PRODUCT, sku: productSku, qty: qty };
 };
 
-const updateProduct = (productId, qty) => {
-  return { type: types.UPDATE_PRODUCT, productId: productId, qty: qty };
+const updateProduct = (productSku, qty) => {
+  return { type: types.UPDATE_PRODUCT, sku: productSku, qty: qty };
 };
 
-const removeProduct = productId => {
-  return { type: types.REMOVE_PRODUCT, productId: productId };
+const removeProduct = productSku => {
+  return { type: types.REMOVE_PRODUCT, sku: productSku };
 };
 
-export default { updateCart, fetchCart, addProduct, updateProduct, removeProduct };
+export default {
+  setCartId,
+  updateCart,
+  fetchCart,
+  addProduct,
+  updateProduct,
+  removeProduct
+};
