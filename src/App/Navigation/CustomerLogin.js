@@ -11,10 +11,10 @@ const CustomerLogin = props => {
 
   return (
     <>
-      {props.customer && <Nav.Link href="/customer">Your Account</Nav.Link>}
-      {!props.customer && <Nav.Link onClick={onClickToLogin}>Login</Nav.Link>}
+      {props.customer.token && <Nav.Link href="/customer">Your Account</Nav.Link>}
+      {!props.customer.token && <Nav.Link onClick={onClickToLogin}>Login</Nav.Link>}
 
-      {showLoginBox && <CustomerLoginForm />}
+      {showLoginBox && <CustomerLoginForm onHide={() => setShowLoginBox(false)} />}
       </>
   );
 };

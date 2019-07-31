@@ -3,9 +3,9 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
-const CustomerLoginForm = () => {
+const CustomerLoginForm = props => {
   return (
-    <Modal.Dialog>
+    <Modal show={true} onHide={props.onHide}>
       <Modal.Header closeButton>
         <Modal.Title>Login to your account</Modal.Title>
       </Modal.Header>
@@ -36,10 +36,12 @@ const CustomerLoginForm = () => {
       </Modal.Body>
 
       <Modal.Footer>
-        <Button variant="secondary">Cancel</Button>
+        <Button variant="secondary" onClick={props.onHide}>
+          Cancel
+        </Button>
         <Button variant="primary">Login</Button>
       </Modal.Footer>
-    </Modal.Dialog>
+    </Modal>
   );
 };
 
