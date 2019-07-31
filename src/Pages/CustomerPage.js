@@ -5,8 +5,13 @@ import { Query } from "react-apollo";
 import Debug from "../Test/Debug";
 import ErrorPage from "./ErrorPage";
 import Loading from "../Utils/Loading";
+import LoginForm from "./CustomerPage/LoginForm";
 
 const CustomerPage = props => {
+  if (!props.customer.token) {
+    return <LoginForm/>;
+  }
+
   const customerQuery = loader("src/state/graphql/queries/customer.graphql");
 
   return (
@@ -28,7 +33,18 @@ const CustomerPage = props => {
   );
 };
 
+const mapStateToProps = state => {
+  return {
+    customer: state.customer
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+  };
+};
+
 export default connect(
-  null,
-  null
+  mapStateToProps,
+  mapDispatchToProps
 )(CustomerPage);
