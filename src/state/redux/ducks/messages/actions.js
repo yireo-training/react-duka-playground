@@ -40,12 +40,7 @@ const removeMessage = (messageText, messageType = "info") => {
   };
 };
 
-const setMessages = messages => {
-  return { type: types.SET_MESSAGES, messages: messages };
-};
-
 export default {
   addMessage,
-  removeMessage,
-  setMessages
+  removeMessage
 };

@@ -2,10 +2,10 @@
  * Messages integrations with Redux following the ducks standard
  */
 
-import reducers from "./reducers";
+import messagesReducer from "./reducer";
 
 export { default as messagesTypes } from "./types";
 export { default as messagesActions } from "./actions";
-export default reducers;
+export default messagesReducer;
 
 // End

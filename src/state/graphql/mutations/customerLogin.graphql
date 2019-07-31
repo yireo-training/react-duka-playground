@@ -1,0 +1,5 @@
+mutation customerLogin($email:String!, $password:String!) {
+  generateCustomerToken(email:$email, password:$password) {
+    token
+  }
+}

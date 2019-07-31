@@ -2,11 +2,10 @@
  * Cart integrations with Redux following the ducks standard
  */
 
-import reducers from "./reducers";
-
+import cartReducer from "./reducer";
 export { default as cartTypes } from "./types";
 export { default as cartMiddleware } from "./middleware";
 export { default as cartActions } from "./actions";
-export default reducers;
+export default cartReducer;
 
 // End
