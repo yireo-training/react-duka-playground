@@ -10,6 +10,12 @@ import Loading from "../Utils/Loading";
 const CartPage = props => {
   const cartQuery = loader("src/state/graphql/queries/cart.graphql");
 
+  if (!props.cartId) {
+    return (
+      <div className="CartPage">The cart is empty</div>
+    );
+  }
+
   return (
     <div className="CartPage">
       <Query query={cartQuery} variables={{ cartId: props.cartId }}>

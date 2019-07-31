@@ -26,9 +26,10 @@ const addToCart = async (store, action) => {
       });
     }
   
-    store.dispatch(cartActions.updateCart(result.data));
+    //store.dispatch(cartActions.updateCart(result.data));
     let messageText = 'Product "' + action.sku + '" added to cart';
     store.dispatch(messagesActions.addMessage(messageText, "info"));
+
   } catch (error) {
     console.log(error);
     store.dispatch(messagesActions.addMessage(error.toString(), "danger"));

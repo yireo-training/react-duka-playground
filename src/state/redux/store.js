@@ -15,6 +15,8 @@ const initialState = {
   },
   messages: {
     items: []
+  },
+  customer: {
   }
 };
 

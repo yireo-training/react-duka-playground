@@ -13,12 +13,12 @@ import * as serviceWorker from "./serviceWorker";
 persistStore(reduxStore).then(reduxStore => {
   ReactDOM.render(
     <ApolloProvider client={apolloClient}>
-    <ReduxProvider store={reduxStore}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </ReduxProvider>
-  </ApolloProvider>, document.getElementById('root')
+      <ReduxProvider store={reduxStore}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ReduxProvider>
+    </ApolloProvider>, document.getElementById('root')
   );
 });
 
