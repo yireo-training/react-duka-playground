@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import actions from "../state/redux/ducks/messages/actions";
+import actions from "../../state/redux/ducks/messages/actions";
 
 const MessagesTest = props => {
   const onClick = () => {

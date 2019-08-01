@@ -2,12 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Badge from "react-bootstrap/Badge";
 import { connect } from "react-redux"
-import cartActions from "../../state/redux/ducks/cart/actions";
+import cartActions from "../../../state/redux/ducks/cart/actions";
 
 const MiniCart = (props) => {
   return (
-    <Link to="/cart" className="nav-link" role="button">Checkout
-      Cart
+    <Link to="/cart" className="nav-link" role="button">
+      Cart &nbsp;
       {props.cart.id && <Badge variant="primary">{props.cart.items.length}</Badge>}
     </Link>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { loader } from "graphql.macro";
 import { Query } from "react-apollo";
-import cartActions from "../state/redux/ducks/cart/actions";
+import cartActions from "../../state/redux/ducks/cart/actions";
 import Debug from "../Test/Debug";
 import ErrorPage from "./ErrorPage";
 import Loading from "../Utils/Loading";

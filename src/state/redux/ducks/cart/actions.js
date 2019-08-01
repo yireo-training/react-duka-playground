@@ -9,10 +9,6 @@ const updateCart = () => {
   return { type: types.UPDATE_CART };
 };
 
-const fetchCart = () => {
-  return { type: types.FETCH_CART };
-};
-
 const addProduct = (productSku, qty) => {
   if (!qty > 0) qty = 1;
   return { type: types.ADD_PRODUCT, sku: productSku, qty: qty };
@@ -26,11 +22,15 @@ const removeProduct = productSku => {
   return { type: types.REMOVE_PRODUCT, sku: productSku };
 };
 
+const setLock = (locked) => {
+  return { type: types.SET_LOCK, locked: locked };
+};
+
 export default {
   setCartId,
   updateCart,
-  fetchCart,
   addProduct,
   updateProduct,
-  removeProduct
+  removeProduct,
+  setLock
 };

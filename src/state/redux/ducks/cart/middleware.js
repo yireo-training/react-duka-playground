@@ -3,22 +3,7 @@ import apolloClient from "../../../graphql/apollo-client";
 import { loader } from "graphql.macro";
 import types from "./types";
 import actions from "./actions";
-import getCartId from "./middleware/getCartId";
 import addToCart from "./middleware/addToCart";
-
-const handleFetchCart = async (store, action) => {
-  action.cartId = await getCartId(store);
-  const result = await apolloClient.query({
-    query: loader("../../../graphql/queries/fetchCart.graphql"),
-    variables: action
-  });
-
-  if (result.errors) {
-    store.dispatch({ type: "SET_MESSAGES", messages: result.errors }); // @todo: Implement this
-  }
-
-  //store.dispatch(actions.updateCart(result.data));
-};
 
 const cartMiddleware = store => {
   return next => {
@@ -30,9 +15,6 @@ const cartMiddleware = store => {
       let variables;
 
       switch (action.type) {
-        case types.FETCH_CART:
-          return handleFetchCart(store, action);
-
         case types.ADD_PRODUCT:
           return addToCart(store, action);
 

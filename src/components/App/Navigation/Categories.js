@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { loader } from "graphql.macro";
 
 const categoriesQuery = loader(
-  "../../state/graphql/queries/topLevelCategories.graphql"
+  "../../../state/graphql/queries/topLevelCategories.graphql"
 );
 
 const Categories = () => {

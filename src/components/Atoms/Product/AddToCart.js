@@ -1,37 +1,46 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import { connect } from "react-redux"
-import actions from "../../state/redux/ducks/cart/actions";
+import cartActions from "../../../state/redux/ducks/cart/actions";
 
 const AddToCart = props => {
   const product = props.product;
-  const [disabled, setDisabled] = useState(false);
   const [label, setLabel] = useState('Add to cart');
   
   const onClick = () => {
-    setDisabled(true);
     setLabel('Adding to cart ...');
     props.onClick(product.sku, 1);
   }
 
+  if (props.locked === false) {
+    setLabel('Add to cart');
+  }
+
   return (
     <>
-      <Button variant="primary" onClick={onClick} disabled={disabled}>
+      <Button variant="primary" onClick={onClick} disabled={props.locked}>
         {label}
       </Button>
     </>
   );
 };
 
+const mapStateToProps = (state) => {
+  return {
+    locked: state.cart.locked
+  }
+}
+
 const mapDispatchToProps = dispatch => {
   return {
     onClick: (sku, qty) => {
-      dispatch(actions.addProduct(sku, qty));
+      dispatch(cartActions.setLock(true));
+      //dispatch(cartActions.addProduct(sku, qty));
     }
   };
 };
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(AddToCart);
