@@ -1,5 +1,5 @@
 import React from "react";
-import ProductGridItem from "./ProductGridItem";
+import Item from "./ProductGrid/Item";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
@@ -13,7 +13,7 @@ const ProductListing = props => {
       <Row>
         {props.products.map(product => (
           <Col xs={4} key={product.id}>
-            <ProductGridItem product={product} />
+            <Item product={product} key={product.id} />
           </Col>
         ))}
       </Row>

@@ -22,8 +22,8 @@ const removeProduct = productSku => {
   return { type: types.REMOVE_PRODUCT, sku: productSku };
 };
 
-const setLock = (locked) => {
-  return { type: types.SET_LOCK, locked: locked };
+const setLock = (locked, afterUnlockCallback) => {
+  return { type: types.SET_LOCK, locked: locked, afterUnlockCallback: afterUnlockCallback };
 };
 
 export default {

@@ -5,22 +5,20 @@ import cartActions from "../../../state/redux/ducks/cart/actions";
 
 const AddToCart = props => {
   const product = props.product;
-  const [label, setLabel] = useState('Add to cart');
-  
+  const [inProgress, setInProgress] = useState(false);
+
   const onClick = () => {
-    setLabel('Adding to cart ...');
-    props.onClick(product.sku, 1);
+    setInProgress(true);
+    props.onClick(product.sku, 1, () => setInProgress(false));
   }
 
-  let actualLabel = label;
-  if (props.locked === false) {
-    actualLabel = 'Ádd to cart'
-  }
+  let label = (inProgress) ? 'Adding to cart ...' : 'Add to cart';
+  let disabled = (inProgress) ? true : false;
 
   return (
     <>
-      <Button variant="primary" onClick={onClick} disabled={props.locked}>
-        {actualLabel}
+      <Button variant="primary" onClick={onClick} disabled={disabled}>
+        {label}
       </Button>
     </>
   );
@@ -34,8 +32,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onClick: (sku, qty) => {
-      dispatch(cartActions.setLock(true));
+    onClick: (sku, qty, afterUnlockCallback) => {
+      dispatch(cartActions.setLock(true, afterUnlockCallback));
       dispatch(cartActions.addProduct(sku, qty));
     }
   };

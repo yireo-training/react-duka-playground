@@ -1,8 +1,8 @@
 import React from "react";
-import Image from "react-bootstrap/Image";
-import Price from "../Atoms/Product/Price";
-import AddToCart from "../Atoms/Product/AddToCart";
 import { Link } from "react-router-dom";
+import Image from "react-bootstrap/Image";
+import Price from "../../Atoms/Product/Price";
+import AddToCart from "../../Atoms/Product/AddToCart";
 
 const Product = props => {
   if (props.product === undefined) {

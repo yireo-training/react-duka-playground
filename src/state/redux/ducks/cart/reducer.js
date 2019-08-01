@@ -32,7 +32,8 @@ const removeProductReducer = (state, action) => {
 };
 
 const setLockReducer = (state, action) => {
-  return Object.assign({}, state, {locked: action.locked});
+  let callback = (action.afterUnlockCallback) ? action.afterUnlockCallback : state.afterUnlockCallback;
+  return Object.assign({}, state, {locked: action.locked, afterUnlockCallback: callback});
 }
 
 // Main reducer
