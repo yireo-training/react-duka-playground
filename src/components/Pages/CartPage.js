@@ -8,6 +8,10 @@ import ErrorPage from "./ErrorPage";
 import Loading from "../Utils/Loading";
 
 const CartPage = props => {
+  if (props.locked) {
+    props.unLock();
+  }
+  
   const cartQuery = loader("src/state/graphql/queries/cart.graphql");
 
   if (!props.cartId) {
@@ -37,7 +41,8 @@ const CartPage = props => {
 
 const mapStateToProps = state => {
   return {
-    cartId: state.cart.id
+    cartId: state.cart.id,
+    locked: state.cart.locked,
   };
 };
 
@@ -45,6 +50,9 @@ const mapDispatchToProps = dispatch => {
   return {
     removeProduct: sku => {
       dispatch(cartActions.removeProduct(sku));
+    },
+    unLock: () => {
+      dispatch(cartActions.setLock(false));
     }
   };
 };

@@ -1,6 +1,7 @@
 import { loader } from "graphql.macro";
 import apolloClient from "../../../../graphql/apollo-client";
 import messagesActions from "../../messages/actions";
+import cartActions from "../actions";
 import getCartId from "./getCartId";
 
 const addToCart = async (store, action) => {
@@ -20,10 +21,12 @@ const addToCart = async (store, action) => {
   
     let messageText = 'Product "' + action.sku + '" added to cart';
     store.dispatch(messagesActions.addMessage(messageText, "info"));
+    store.dispatch(cartActions.setLock(false));
 
   } catch (error) {
     console.log(error);
     store.dispatch(messagesActions.addMessage(error.toString(), "danger"));
+    store.dispatch(cartActions.setLock(false));
     return;
   }
 };

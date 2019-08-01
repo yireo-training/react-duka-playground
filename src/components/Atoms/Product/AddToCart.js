@@ -12,14 +12,15 @@ const AddToCart = props => {
     props.onClick(product.sku, 1);
   }
 
+  let actualLabel = label;
   if (props.locked === false) {
-    setLabel('Add to cart');
+    actualLabel = 'Ádd to cart'
   }
 
   return (
     <>
       <Button variant="primary" onClick={onClick} disabled={props.locked}>
-        {label}
+        {actualLabel}
       </Button>
     </>
   );
@@ -35,7 +36,7 @@ const mapDispatchToProps = dispatch => {
   return {
     onClick: (sku, qty) => {
       dispatch(cartActions.setLock(true));
-      //dispatch(cartActions.addProduct(sku, qty));
+      dispatch(cartActions.addProduct(sku, qty));
     }
   };
 };
