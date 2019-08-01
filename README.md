@@ -18,7 +18,9 @@ Afterwards, start the app:
 ## Architecture
 This package is based on `create-react-app`.
 
-Redux uses the ducks-standard with 3 ducks (cart, customer, messages) to group action types, action creators, reducers and middleware together. The cart and customer ducks use a `locked` variable to prevent multiple simultaneous actions.
+Redux uses the ducks-standard with 3 ducks (cart, customer, messages) to group action types, action creators, reducers and middleware together. 
+
+The cart and customer ducks use a `locked` variable to prevent multiple simultaneous actions. Using a `setLock(true, callback)` action, the lock is set. When calling upon `setLock(false)`, the lock will be liften and the callback will be called as well. The callback allows for the Redux middleware (handling GraphQL things asyncronously) to send a message to the local component to update the local state.
 
 ## Todo
 - Working customer login
