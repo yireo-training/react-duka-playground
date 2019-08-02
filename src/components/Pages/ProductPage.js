@@ -12,7 +12,7 @@ import StockStatus from "../Atoms/Product/StockStatus";
 import Price from "../Atoms/Product/Price";
 
 const ProductPage = props => {
-  const productPageQuery = loader("src/state/graphql/queries/productPage.graphql");
+  const productPageQuery = loader("state/graphql/queries/productPage.graphql");
   return (
     <Query query={productPageQuery} variables={{ url_key: props.url_key }}>
       {({ loading, error, data }) => {

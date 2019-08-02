@@ -12,7 +12,7 @@ const CustomerPage = props => {
     return <LoginForm/>;
   }
 
-  const customerQuery = loader("src/state/graphql/queries/customer.graphql");
+  const customerQuery = loader("state/graphql/queries/customer.graphql");
 
   return (
     <div className="CustomerPage">

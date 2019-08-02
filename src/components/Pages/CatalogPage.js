@@ -9,7 +9,7 @@ import { loader } from "graphql.macro";
 
 const CatalogPage = props => {
 
-  const resolveCategoryUrlToIdQuery = loader("src/state/graphql/queries/resolveCatalogUrlToId.graphql");
+  const resolveCategoryUrlToIdQuery = loader("state/graphql/queries/resolveCatalogUrlToId.graphql");
   const catalogUrl = props.match.url;
   return (
     <div className="CatalogPage">

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import Message from "./Messages/Message";
-import actions from "../../state/redux/ducks/messages/actions";
+import actions from "state/redux/ducks/messages/actions";
 
 const Messages = props => {
   if (!props.messages || !props.messages.length) {

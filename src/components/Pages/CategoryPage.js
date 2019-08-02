@@ -9,7 +9,7 @@ import ErrorPage from "./ErrorPage";
 const categoryImageUrl = "http://m2.betelgeuse.yr/media/catalog/category/";
 
 const CategoryPage = props => {
-  const categoryPageQuery = loader("src/state/graphql/queries/categoryPage.graphql");
+  const categoryPageQuery = loader("state/graphql/queries/categoryPage.graphql");
 
   return (
     <Query query={categoryPageQuery} variables={{ id: props.id }}>
