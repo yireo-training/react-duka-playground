@@ -2,12 +2,12 @@ import React from "react";
 import { connect } from "react-redux";
 import { loader } from "graphql.macro";
 import cartActions from "state/redux/ducks/cart/actions";
-import CartPage from "./component";
+import CartPageQuery from "./queryComponent";
 
 const CartPageContainer = props => {
   let newProps = { ...props };
   newProps.query = loader("state/graphql/queries/cart.graphql");
-  return <CartPage {...newProps} />;
+  return <CartPageQuery {...newProps} />;
 };
 
 const mapStateToProps = state => {
