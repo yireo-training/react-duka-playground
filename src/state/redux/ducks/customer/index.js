@@ -5,6 +5,7 @@
 import customerReducer from "./reducer";
 export { default as customerTypes } from "./types";
 export { default as customerActions } from "./actions";
+export { default as customerInitialState } from "./initialState";
 export default customerReducer;
 
 // End

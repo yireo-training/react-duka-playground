@@ -1,7 +1,7 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
-import cartReducer, { cartMiddleware } from "./ducks/cart";
-import customerReducer from "./ducks/customer";
-import messagesReducer from "./ducks/messages";
+import cartReducer, { cartMiddleware, cartInitialState } from "./ducks/cart";
+import customerReducer, { customerInitialState } from "./ducks/customer";
+import messagesReducer, { messagesInitialState } from "./ducks/messages";
 import { autoRehydrate } from "redux-phoenix";
 
 const reducers = combineReducers({
@@ -11,18 +11,9 @@ const reducers = combineReducers({
 });
 
 const initialState = {
-  cart: {
-    id: "",
-    items: [],
-    locked: false
-  },
-  messages: {
-    items: []
-  },
-  customer: {
-    token: "",
-    locked: false
-  }
+  cart: cartInitialState,
+  messages: messagesInitialState,
+  customer: customerInitialState
 };
 
 const middleware = applyMiddleware(cartMiddleware);
