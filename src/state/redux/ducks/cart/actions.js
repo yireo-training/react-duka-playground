@@ -22,8 +22,12 @@ const removeProduct = productSku => {
   return { type: types.REMOVE_PRODUCT, sku: productSku };
 };
 
-const setLock = (locked, afterUnlockCallback) => {
-  return { type: types.SET_LOCK, locked: locked, afterUnlockCallback: afterUnlockCallback };
+const lock = (afterUnlockCallback) => {
+  return { type: types.LOCK, afterUnlockCallback: afterUnlockCallback };
+};
+
+const unlock = () => {
+  return { type: types.UNLOCK };
 };
 
 export default {
@@ -32,5 +36,6 @@ export default {
   addProduct,
   updateProduct,
   removeProduct,
-  setLock
+  lock,
+  unlock
 };

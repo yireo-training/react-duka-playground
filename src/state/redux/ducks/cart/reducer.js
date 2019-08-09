@@ -31,14 +31,26 @@ const removeProductReducer = (state, action) => {
   return Object.assign({}, state, { items: newProducts });
 };
 
-const setLockReducer = (state, action) => {
-  let callback = (action.afterUnlockCallback) ? action.afterUnlockCallback : state.afterUnlockCallback;
-  return Object.assign({}, state, {locked: action.locked, afterUnlockCallback: callback});
-}
+const lockReducer = (state, action) => {
+  let callback = action.afterUnlockCallback
+    ? action.afterUnlockCallback
+    : state.afterUnlockCallback;
+  return Object.assign({}, state, {
+    locked: true,
+    afterUnlockCallback: callback
+  });
+};
+
+const unlockReducer = state => {
+  return Object.assign({}, state, { locked: false });
+};
 
 // Main reducer
 const cartReducer = (state, action) => {
-  if (state === undefined) return {};
+  if (state === undefined) {
+    return {};
+  }
+
   if (action.type === types.SET_CART_ID) {
     return setCartIdReducer(state, action);
   }
@@ -59,8 +71,12 @@ const cartReducer = (state, action) => {
     return removeProductReducer(state, action);
   }
 
-  if (action.type === types.SET_LOCK) {
-    return setLockReducer(state, action);
+  if (action.type === types.LOCK) {
+    return lockReducer(state, action);
+  }
+
+  if (action.type === types.UNLOCK) {
+    return unlockReducer(state);
   }
 
   return state;

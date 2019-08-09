@@ -33,7 +33,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
   return {
     onClick: (sku, qty, afterUnlockCallback) => {
-      dispatch(cartActions.setLock(true, afterUnlockCallback));
+      dispatch(cartActions.lock(afterUnlockCallback));
       dispatch(cartActions.addProduct(sku, qty));
     }
   };

@@ -4,7 +4,8 @@ const UPDATE_CART = "apolloPlayground/cart/UPDATE_CART";
 const ADD_PRODUCT = "apolloPlayground/cart/ADD_PRODUCT";
 const UPDATE_PRODUCT = "apolloPlayground/cart/UPDATE_PRODUCT";
 const REMOVE_PRODUCT = "apolloPlayground/cart/REMOVE_PRODUCT";
-const SET_LOCK = "apolloPlayground/cart/SET_LOCK";
+const LOCK = "apolloPlayground/cart/LOCK";
+const UNLOCK = "apolloPlayground/cart/UNLOCK";
 
 export default {
   SET_CART_ID,
@@ -12,5 +13,6 @@ export default {
   ADD_PRODUCT,
   UPDATE_PRODUCT,
   REMOVE_PRODUCT,
-  SET_LOCK
+  LOCK,
+  UNLOCK
 };

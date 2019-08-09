@@ -23,7 +23,7 @@ const mapDispatchToProps = dispatch => {
       dispatch(cartActions.removeProduct(sku));
     },
     unLock: () => {
-      dispatch(cartActions.setLock(false));
+      dispatch(cartActions.unlock());
     }
   };
 };

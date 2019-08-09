@@ -4,7 +4,7 @@ import { loader } from "graphql.macro";
 import types from "./types";
 import actions from "./actions";
 import addToCart from "./middleware/addToCart";
-import setLock from "./middleware/setLock";
+import unlock from "./middleware/unlock";
 
 const cartMiddleware = store => {
   return next => {
@@ -35,8 +35,8 @@ const cartMiddleware = store => {
           variables = action;
           break;
 
-        case types.SET_LOCK:
-          return setLock(store, action);
+        case types.UNLOCK:
+          return unlock(store);
   
 
         default:

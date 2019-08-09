@@ -21,12 +21,12 @@ const addToCart = async (store, action) => {
   
     let messageText = 'Product "' + action.sku + '" added to cart';
     store.dispatch(messagesActions.addMessage(messageText, "info"));
-    store.dispatch(cartActions.setLock(false));
+    store.dispatch(cartActions.unlock());
 
   } catch (error) {
     console.log(error);
     store.dispatch(messagesActions.addMessage(error.toString(), "danger"));
-    store.dispatch(cartActions.setLock(false));
+    store.dispatch(cartActions.unlock());
     return;
   }
 };
