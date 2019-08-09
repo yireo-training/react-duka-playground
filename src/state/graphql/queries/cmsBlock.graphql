@@ -1,0 +1,11 @@
+query cmsBlock($id:String) {
+  cmsBlocks(identifiers: [
+    $id
+  ]){
+    items {
+      content
+      identifier
+      title
+    }
+  }
+}

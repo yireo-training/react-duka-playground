@@ -1,0 +1,9 @@
+.HomePage {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+
+.HomePage .sidebar {
+    border-left: 1px solid #ccc;
+    padding: 10px;
+}
