@@ -1,4 +1,4 @@
-query resolveCategoryUrlToId($url:String!) {
+query resolve($url:String!) {
   urlResolver(url: $url) {
     id
     type

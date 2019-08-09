@@ -1,0 +1,8 @@
+.CartPage .totals tr td {
+    text-align: right;
+}
+
+.CartPage .bottom {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
