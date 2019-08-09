@@ -1,49 +1,11 @@
 import types from "./types";
-
-const setCartIdReducer = (state, action) => {
-  return Object.assign({}, state, { id: action.cartId });
-};
-
-const updateCartReducer = (state, action) => {
-  return state;
-};
-
-const addProductReducer = (state, action) => {
-  let products = state.items ? state.items : [];
-  let newProducts = [...products];
-  newProducts.push({ sku: action.sku, qty: action.qty });
-  let newState = Object.assign({}, state, { items: newProducts });
-  return newState;
-};
-
-const updateProductReducer = (state, action) => {
-  return state;
-};
-
-const removeProductReducer = (state, action) => {
-  let products = state.items ? state.items : [];
-  let newProducts = [...products];
-  newProducts.map((product, index) => {
-    if (product.sku === action.sku) newProducts.splice(index, 1);
-    return product;
-  });
-
-  return Object.assign({}, state, { items: newProducts });
-};
-
-const lockReducer = (state, action) => {
-  let callback = action.afterUnlockCallback
-    ? action.afterUnlockCallback
-    : state.afterUnlockCallback;
-  return Object.assign({}, state, {
-    locked: true,
-    afterUnlockCallback: callback
-  });
-};
-
-const unlockReducer = state => {
-  return Object.assign({}, state, { locked: false });
-};
+import setCartIdReducer from "./reducers/setCartId";
+import addProductReducer from "./reducers/addProduct";
+import updateCartReducer from "./reducers/updateCart";
+import updateProductReducer from "./reducers/updateProduct";
+import removeProductReducer from "./reducers/removeProduct";
+import lockReducer from "./reducers/lock";
+import unlockReducer from "./reducers/unlock";
 
 // Main reducer
 const cartReducer = (state, action) => {
