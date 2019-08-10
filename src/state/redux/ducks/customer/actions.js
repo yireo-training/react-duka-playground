@@ -22,18 +22,8 @@ const setCustomerToken = (token) => {
   };
 };
 
-const lock = (afterUnlockCallback) => {
-  return { type: types.LOCK, afterUnlockCallback: afterUnlockCallback };
-};
-
-const unlock = () => {
-  return { type: types.UNLOCK };
-};
-
 export default {
   loginCustomer,
   logoutCustomer,
-  setCustomerToken,
-  lock,
-  unlock
+  setCustomerToken
 };

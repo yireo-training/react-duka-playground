@@ -4,8 +4,8 @@ import addProductReducer from "./reducers/addProduct";
 import updateCartReducer from "./reducers/updateCart";
 import updateProductReducer from "./reducers/updateProduct";
 import removeProductReducer from "./reducers/removeProduct";
-import lockReducer from "./reducers/lock";
-import unlockReducer from "./reducers/unlock";
+import lockReducer from "../common/reducers/lock";
+import unlockReducer from "../common/reducers/unlock";
 
 // Main reducer
 const cartReducer = (state, action) => {

@@ -1,5 +1,5 @@
 import React from "react";
-import CustomerLoginForm from "../../Molecules/CustomerLoginForm/component";
+import CustomerLoginForm from "../../Molecules/CustomerLoginForm";
 
 const LoginForm = () => {
   return (

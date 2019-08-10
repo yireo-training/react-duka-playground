@@ -3,7 +3,6 @@ import types from "./types";
 import addToCart from "./middleware/addToCart";
 import updateProduct from "./middleware/updateProduct";
 import removeProduct from "./middleware/removeProduct";
-import unlock from "./middleware/unlock";
 
 const cartMiddleware = store => {
   return next => {
@@ -19,9 +18,6 @@ const cartMiddleware = store => {
 
         case types.REMOVE_PRODUCT:
           return removeProduct(store, action);
-
-        case types.UNLOCK:
-          return unlock(store);
 
         default:
           return;

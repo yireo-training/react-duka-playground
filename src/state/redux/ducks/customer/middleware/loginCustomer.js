@@ -1,7 +1,8 @@
 import { loader } from "graphql.macro";
 import apolloClient from "../../../../graphql/apollo-client";
-import messagesActions from "../../messages/actions";
 import customerActions from "../actions";
+import messagesActions from "../../messages/actions";
+import commonActions from "../../common/actions";
 
 export default async (store, action) => {
   if (!action.email || !action.password) {
@@ -22,12 +23,12 @@ export default async (store, action) => {
   
     store.dispatch(customerActions.setCustomerToken(data.generateCustomerToken.token));
     store.dispatch(messagesActions.addMessage('You have logged in', "info"));
-    store.dispatch(customerActions.unlock());
+    store.dispatch(commonActions.unlock());
 
   } catch (error) {
     console.log(error);
     store.dispatch(messagesActions.addMessage(error.toString(), "danger"));
-    store.dispatch(customerActions.unlock());
+    store.dispatch(commonActions.unlock());
     return;
   }
 };

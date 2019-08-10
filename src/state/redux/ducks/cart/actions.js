@@ -22,20 +22,10 @@ const removeProduct = productSku => {
   return { type: types.REMOVE_PRODUCT, sku: productSku };
 };
 
-const lock = (afterUnlockCallback) => {
-  return { type: types.LOCK, afterUnlockCallback: afterUnlockCallback };
-};
-
-const unlock = () => {
-  return { type: types.UNLOCK };
-};
-
 export default {
   setCartId,
   updateCart,
   addProduct,
   updateProduct,
-  removeProduct,
-  lock,
-  unlock
+  removeProduct
 };
