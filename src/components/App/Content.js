@@ -6,7 +6,6 @@ import CheckoutPage from "../Pages/CheckoutPage";
 import CartPage from "../Pages/CartPage";
 import CatalogPage from "../Pages/CatalogPage";
 import NotFoundPage from "../Pages/NotFoundPage";
-import MessagesTest from "../Test/MessagesTest";
 import Messages from "../Molecules/Messages";
 import "./Content.css";
 
@@ -23,8 +22,6 @@ const Content = () => {
         <Route path="/:url_key.html" component={CatalogPage} />
         <Route component={NotFoundPage} />
       </Switch>
-
-      <MessagesTest />
     </div>
   );
 };

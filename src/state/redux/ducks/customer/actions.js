@@ -15,7 +15,25 @@ const logoutCustomer = () => {
   };
 };
 
+const setCustomerToken = (token) => {
+  return {
+    type: types.SET_CUSTOMER_TOKEN,
+    token: token
+  };
+};
+
+const lock = (afterUnlockCallback) => {
+  return { type: types.LOCK, afterUnlockCallback: afterUnlockCallback };
+};
+
+const unlock = () => {
+  return { type: types.UNLOCK };
+};
+
 export default {
   loginCustomer,
-  logoutCustomer
+  logoutCustomer,
+  setCustomerToken,
+  lock,
+  unlock
 };

@@ -1,6 +1,6 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import cartReducer, { cartMiddleware, cartInitialState } from "./ducks/cart";
-import customerReducer, { customerInitialState } from "./ducks/customer";
+import customerReducer, { customerMiddleware, customerInitialState } from "./ducks/customer";
 import messagesReducer, { messagesInitialState } from "./ducks/messages";
 import { autoRehydrate } from "redux-phoenix";
 
@@ -16,7 +16,7 @@ const initialState = {
   customer: customerInitialState
 };
 
-const middleware = applyMiddleware(cartMiddleware);
+const middleware = applyMiddleware(cartMiddleware, customerMiddleware);
 
 const enhancements = compose(
   middleware,

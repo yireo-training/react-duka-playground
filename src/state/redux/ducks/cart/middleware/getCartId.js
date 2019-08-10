@@ -1,6 +1,6 @@
 import apolloClient from "../../../../graphql/apollo-client";
 import { loader } from "graphql.macro";
-import actions from "../actions";
+import cartActions from "../actions";
 
 const getCartId = async store => {
   const currentState = store.getState();
@@ -14,7 +14,7 @@ const getCartId = async store => {
     throw new Error("Empty cart ID");
   }
 
-  store.dispatch(actions.setCartId(data.createEmptyCart));
+  store.dispatch(cartActions.setCartId(data.createEmptyCart));
   return data.createEmptyCart;
 };
 
