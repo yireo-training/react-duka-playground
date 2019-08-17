@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Nav from "react-bootstrap/Nav";
 import CustomerLoginForm from "components/Molecules/CustomerLoginForm";
 import Modal from "react-bootstrap/Modal";
+import { Link } from "react-router-dom";
 
 const CustomerLogin = props => {
   const [showLoginBox, setShowLoginBox] = useState(false);
@@ -13,7 +14,9 @@ const CustomerLogin = props => {
   return (
     <>
       {props.customer.token && (
-        <Nav.Link href="/customer">Your Account</Nav.Link>
+        <Link to="/customer" className="nav-link" role="button">
+          Your Account
+        </Link>
       )}
 
       {!props.customer.token && (
