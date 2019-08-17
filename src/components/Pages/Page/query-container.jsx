@@ -11,9 +11,9 @@ import { loader } from "graphql.macro";
 const PageQueryContainer = props => {
 
   const resolveCategoryUrlToIdQuery = loader("state/graphql/queries/resolveCatalogUrlToId.graphql");
-  const catalogUrl = props.match.url;
+  const url = props.match.url;
   return (
-      <Query query={resolveCategoryUrlToIdQuery} variables={{ url: catalogUrl }}>
+      <Query query={resolveCategoryUrlToIdQuery} variables={{ url: url }}>
         {({ loading, error, data }) => {
           if (loading) return <Loading />;
           if (error) return <ErrorPage error={error.message} />;
@@ -27,11 +27,12 @@ const PageQueryContainer = props => {
             return <ProductPage url_key={props.match.params.url_key} />;
           }
 
-          if (data.urlResolver.type === "CMSPAGE" && props.match.params.url_key) {
-            return <CmsPage url_key={props.match.params.url_key} />;
+          if (data.urlResolver.type === "CMS_PAGE" && props.match.params.url_key) {
+            return <CmsPage id={data.urlResolver.id} />;
           }
 
-          return <NotFoundPage reason="No product or category with this name" />
+          console.log(data);
+          return <NotFoundPage reason="No product or category or CMS-page with this name" />
         }}
       </Query>
   );
