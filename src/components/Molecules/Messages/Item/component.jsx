@@ -8,6 +8,9 @@ const Item = props => {
     }, 4000);
   }
 
+  let message = props.text;
+  message = message.replace('Error: GraphQL error: ', '');
+
   return (
     <Alert
       variant={props.type}
@@ -15,7 +18,7 @@ const Item = props => {
       dismissible
       onClose={props.onClose}
     >
-      {props.text}
+      {message}
     </Alert>
   );
 };
