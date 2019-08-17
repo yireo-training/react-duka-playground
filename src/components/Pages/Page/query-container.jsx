@@ -24,7 +24,8 @@ const PageQueryContainer = props => {
           }
           
           if (data.urlResolver.type === "PRODUCT" && props.match.params.url_key) {
-            return <ProductPage url_key={props.match.params.url_key} />;
+            const url_key = props.match.params.url_key.replace(/.html$/, '')
+            return <ProductPage url_key={url_key} />;
           }
 
           if (data.urlResolver.type === "CMS_PAGE" && props.match.params.url_key) {
