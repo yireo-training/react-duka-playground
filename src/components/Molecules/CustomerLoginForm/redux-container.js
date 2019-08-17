@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import customerActions from "state/redux/ducks/customer/actions";
 import CustomerLoginForm from "./component";
 
-const CustomerLoginFormContainer  = props => {
+const CustomerLoginFormReduxContainer  = props => {
   return <CustomerLoginForm {...props} />;
 };
 
@@ -27,4 +27,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(CustomerLoginFormContainer);
+)(CustomerLoginFormReduxContainer);

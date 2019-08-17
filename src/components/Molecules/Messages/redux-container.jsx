@@ -1,26 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
-import Message from "./Messages/Message";
 import actions from "state/redux/ducks/messages/actions";
+import Messages from "./component";
 
-const Messages = props => {
-  if (!props.messages || !props.messages.length) {
-    return <></>
-  }
-
-  return (
-    <>
-      {props.messages.map((message, index) => (
-        <Message
-          key={index}
-          text={message.text}
-          type={message.type}
-          onClose={() => props.onMessageClose(message.text)}
-          autoClose
-        />
-      ))}
-    </>
-  );
+const MessagesReduxContainer = props => {
+  return <Messages {...props}/>
 };
 
 const mapStateToProps = state => {
@@ -40,4 +24,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Messages);
+)(MessagesReduxContainer);
