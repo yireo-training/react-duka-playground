@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import { connect } from "react-redux"
 import cartActions from "../../../state/redux/ducks/cart/actions";
+import commonActions from "../../../state/redux/ducks/common/actions";
 
 const AddToCart = props => {
   const product = props.product;
@@ -33,7 +34,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
   return {
     onClick: (sku, qty, afterUnlockCallback) => {
-      dispatch(cartActions.lock(afterUnlockCallback));
+      dispatch(commonActions.lock(afterUnlockCallback));
       dispatch(cartActions.addProduct(sku, qty));
     }
   };

@@ -19,6 +19,8 @@ const CartPageQuery = props => {
       {({ loading, error, data }) => {
         if (loading) return <Loading />;
         if (error) return <ErrorPage error={error.message} />;
+        if (!data.cart.items || !data.cart.items.length) return <EmptyCartPage />;
+
         return <CartPage {...data} />;
       }}
     </Query>

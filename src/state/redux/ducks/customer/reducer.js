@@ -1,7 +1,7 @@
 import types from "./types";
-import loginCustomerReducer from "./reducer/loginCustomer";
-import logoutCustomerReducer from "./reducer/logoutCustomer";
-import setCustomerTokenReducer from "./reducer/setCustomerToken";
+import loginCustomerReducer from "./reducers/loginCustomer";
+import logoutCustomerReducer from "./reducers/logoutCustomer";
+import setCustomerTokenReducer from "./reducers/setCustomerToken";
 
 // Main reducer
 const customerReducer = (state, action) => {

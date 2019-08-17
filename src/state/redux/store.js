@@ -1,10 +1,10 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
-import cartReducer, { cartMiddleware, cartInitialState } from "./ducks/cart";
+import cartReducer, { cartMiddleware, cartInitialState, cartActions } from "./ducks/cart";
 import customerReducer, { customerMiddleware, customerInitialState } from "./ducks/customer";
 import messagesReducer, { messagesInitialState } from "./ducks/messages";
 import commonReducer, { commonMiddleware } from "./ducks/common";
 
-import { autoRehydrate } from "redux-phoenix";
+import { autoRehydrate } from "redux-phoenix"; // @todo: Load from session storage
 
 const reducers = combineReducers({
   cart: cartReducer,
@@ -28,5 +28,7 @@ const enhancements = compose(
 );
 
 const store = createStore(reducers, initialState, enhancements);
+
+//store.dispatch(cartActions.updateCart());
 
 export default store;

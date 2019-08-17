@@ -1,5 +1,6 @@
 import types from "./types";
 import setCartIdReducer from "./reducers/setCartId";
+import setProductsReducer from "./reducers/setProducts";
 import addProductReducer from "./reducers/addProduct";
 import updateCartReducer from "./reducers/updateCart";
 import updateProductReducer from "./reducers/updateProduct";
@@ -15,6 +16,10 @@ const cartReducer = (state, action) => {
 
   if (action.type === types.SET_CART_ID) {
     return setCartIdReducer(state, action);
+  }
+
+  if (action.type === types.SET_PRODUCTS) {
+    return setProductsReducer(state, action);
   }
 
   if (action.type === types.UPDATE_CART) {

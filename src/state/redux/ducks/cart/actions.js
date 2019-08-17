@@ -5,6 +5,10 @@ const setCartId = cartId => {
   return { type: types.SET_CART_ID, cartId: cartId };
 };
 
+const setProducts = (cartId, items) => {
+  return { type: types.SET_PRODUCTS, cartId: cartId, items: items };
+};
+
 const updateCart = () => {
   return { type: types.UPDATE_CART };
 };
@@ -24,6 +28,7 @@ const removeProduct = productSku => {
 
 export default {
   setCartId,
+  setProducts,
   updateCart,
   addProduct,
   updateProduct,

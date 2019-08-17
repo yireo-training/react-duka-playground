@@ -1,12 +1,14 @@
 import React from "react";
 import { Query } from "react-apollo";
-import Loading from "../Utils/Loading";
 import { loader } from "graphql.macro";
+
 import Image from "react-bootstrap/Image";
-import ErrorPage from "./ErrorPage";
-import NotFoundPage from "./NotFoundPage";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+
+import Loading from "../Utils/Loading";
+import ErrorPage from "./ErrorPage";
+import NotFoundPage from "./NotFoundPage";
 import AddToCart from "../Atoms/Product/AddToCart";
 import StockStatus from "../Atoms/Product/StockStatus";
 import Price from "../Atoms/Product/Price";
