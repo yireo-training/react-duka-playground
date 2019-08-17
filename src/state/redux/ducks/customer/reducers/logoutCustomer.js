@@ -1,4 +1,5 @@
+import initialState from "../initialState";
+
 export default (state, action) => {
-  if (state.token) delete state.token;
-  return state;
+  return Object.assign({}, state, initialState);
 };

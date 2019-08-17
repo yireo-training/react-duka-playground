@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import customerActions from "state/redux/ducks/customer/actions";
+import commonActions from "state/redux/ducks/common/actions";
 import CustomerLoginForm from "./component";
 
 const CustomerLoginFormReduxContainer  = props => {
@@ -15,7 +16,8 @@ const mapStateToProps = (state, props) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onSubmit: (email, password) => {
+    onSubmit: (email, password, callback) => {
+      dispatch(commonActions.lock(callback));
       dispatch(customerActions.loginCustomer(email, password));
     },
     unLock: () => {

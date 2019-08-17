@@ -11,7 +11,12 @@ const CustomerLoginForm = props => {
 
   const onSubmit = () => {
     setLoading(true);
-    props.onSubmit(email, password, () => setLoading(false));
+    props.onSubmit(email, password, () => {
+      setLoading(false);
+      if (props.onSubmitCallback) {
+        props.onSubmitCallback();
+      }
+    });
   }
 
   if (loading) {

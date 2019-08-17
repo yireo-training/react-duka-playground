@@ -15,7 +15,7 @@ const CustomerLogin = props => {
       {props.customer.token && (
         <Nav.Link href="/customer">Your Account</Nav.Link>
       )}
-      
+
       {!props.customer.token && (
         <Nav.Link onClick={onClickToLogin}>Login</Nav.Link>
       )}
@@ -31,7 +31,10 @@ const CustomerLogin = props => {
               Login to your account to get access to your previous cart,
               wishlist or orders.
             </p>
-            <CustomerLoginForm onCancel={() => setShowLoginBox(false)}/>
+            <CustomerLoginForm
+              onCancel={() => setShowLoginBox(false)}
+              onSubmitCallback={() => setShowLoginBox(false)}
+            />
           </Modal.Body>
         </Modal>
       )}

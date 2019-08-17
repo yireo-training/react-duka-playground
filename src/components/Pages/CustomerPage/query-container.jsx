@@ -1,7 +1,6 @@
 import React from "react";
 import { loader } from "graphql.macro";
 import { Query } from "react-apollo";
-import ErrorPage from "../ErrorPage";
 import Loading from "../../Utils/Loading";
 import LoginForm from "./LoginForm";
 import CustomerPageView from "./Dashboard";
@@ -29,7 +28,7 @@ const QueryContainer = props => {
     >
       {({ loading, error, data }) => {
         if (loading) return <Loading />;
-        if (error) return <ErrorPage error={error.message} />;
+        if (error) return <LoginForm />;
 
         const newProps = Object.assign({}, props, {data: data});
         return <CustomerPageView {...newProps} />;
