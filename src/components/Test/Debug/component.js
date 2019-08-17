@@ -1,5 +1,5 @@
 import React from "react";
-import "./Debug.css";
+import "./component.css";
 import JSONPretty from 'react-json-pretty';
 
 const Debug = props => {

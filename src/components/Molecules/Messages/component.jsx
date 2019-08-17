@@ -1,5 +1,5 @@
 import React from "react";
-import Message from "./Message";
+import Message from "./Item";
 
 const Messages = props => {
   if (!props.messages || !props.messages.length) {
