@@ -5,6 +5,7 @@ import messagesActions from "../../messages/actions";
 import commonActions from "../../common/actions";
 
 export default async (store, action) => {
+  console.log(store);
   if (!action.email || !action.password) {
     throw new Error("loginCustomer action called without valid email or password");
   }

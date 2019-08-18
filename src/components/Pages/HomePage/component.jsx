@@ -7,7 +7,7 @@ const HomePage = () => {
   return (
     <div className="HomePage">
       <CmsPage id={2} />
-      <div class="sidebar">
+      <div className="sidebar">
         <CmsBlock id="example" />
       </div>
     </div>
