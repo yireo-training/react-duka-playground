@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import { customerActions } from "state/redux/ducks/customer";
 import CustomerPageQueryContainer from "./query-container";
 
 const CustomerPageReduxContainer = props => {
@@ -13,15 +12,6 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    logoutCustomer: () => {
-      dispatch(customerActions.logoutCustomer());
-    }
-  };
-};
-
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(CustomerPageReduxContainer);

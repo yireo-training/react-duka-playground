@@ -5,6 +5,7 @@ import HomePage from "components/Pages/HomePage/component";
 import CustomerPage from "components/Pages/CustomerPage";
 import CheckoutPage from "components/Pages/CheckoutPage";
 import LoginPage from "components/Pages/LoginPage";
+import LogoutPage from "components/Pages/LogoutPage";
 import CartPage from "components/Pages/CartPage";
 import Page from "components/Pages/Page";
 import NotFoundPage from "components/Pages/NotFoundPage";
@@ -19,7 +20,7 @@ const Content = () => {
       <Messages />
       <Switch>
         <Route exact path="/" component={HomePage} />
-        {customerPages.map((customerPage) => {
+        {customerPages.map(customerPage => {
           return (
             <Route
               key={customerPage.path}
@@ -34,6 +35,8 @@ const Content = () => {
           );
         })}
         <Route exact path="/login" component={LoginPage} />
+        <Route exact path="/logout" component={LogoutPage} />
+        <Route exact path="/customer/account/logout" component={LogoutPage} />
         <Route exact path="/checkout" component={CheckoutPage} />
         <Route exact path="/cart" component={CartPage} />
         <Route path="/:url_key" component={Page} />

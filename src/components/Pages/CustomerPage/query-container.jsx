@@ -29,7 +29,7 @@ const CustomerPageQueryContainer = props => {
     >
       {({ loading, error, data }) => {
         if (loading) return <Loading />;
-        if (error) return <Redirect to="/login" />;
+        if (error) return <Redirect to="/logout" />;
 
         const contentComponent = props.content ? props.content : Dashboard;
         const newProps = Object.assign({}, props, { data: data });
