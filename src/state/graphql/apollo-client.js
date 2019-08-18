@@ -1,6 +1,7 @@
 import { ApolloClient } from "apollo-client";
 import { HttpLink } from "apollo-link-http";
 import { InMemoryCache } from "apollo-cache-inmemory";
+import config from "config.js";
 //import store from "../redux/store";
 
 // @todo: Currently this doesn't work, because localStorage hydration takes place after this ApolloClient initialization
@@ -10,7 +11,7 @@ const headers = {
 };
 
 const httpLink = new HttpLink({
-  uri: "http://m2.vega.yr/graphql",
+  uri: config.magento_graphql_url,
   headers: headers
 });
 

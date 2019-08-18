@@ -1,0 +1,3 @@
+export default {
+    "magento_graphql_url": "http://m2.vega.yr/graphql"
+};
