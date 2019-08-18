@@ -1,5 +1,4 @@
 import React from "react";
-import Debug from "../../../Test/Debug";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
@@ -20,10 +19,10 @@ const Dashboard = props => {
           <Link to="customer/account/changePassword">Change Password</Link>
         </Col>
         <Col>
-          <h4>Contact Information</h4>
+          <h4>Newsletters</h4>
+          <p>Not implemented yet</p>
         </Col>
       </Row>
-      <Debug data={props} />
     </>
   );
 };

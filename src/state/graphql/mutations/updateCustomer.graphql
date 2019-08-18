@@ -1,0 +1,11 @@
+mutation updateCustomer($email: String, $firstname: String, $lastname: String) {
+  updateCustomer(
+    input: { email: $email, firstname: $firstname, lastname: $lastname }
+  ) {
+    customer {
+      email
+      firstname
+      lastname
+    }
+  }
+}

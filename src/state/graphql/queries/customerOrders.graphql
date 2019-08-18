@@ -1,0 +1,11 @@
+{
+  customerOrders {
+    items {
+      created_at
+      grand_total
+      id
+      increment_id
+      status
+    }
+  }
+}
