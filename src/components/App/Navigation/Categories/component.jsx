@@ -7,7 +7,7 @@ const Categories = (props) => {
       {props.categories.map(category => (
         <Link
           key={category.url_key}
-          to={category.url_key + ".html"}
+          to={"/" + category.url_key + ".html"}
           className="nav-link"
           role="button"
         >
