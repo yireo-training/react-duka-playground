@@ -17,10 +17,10 @@ const CustomerLoginForm = props => {
         props.onSubmitCallback();
       }
     });
-  }
+  };
 
   if (loading) {
-    return <Loading />
+    return <Loading />;
   }
 
   return (
@@ -28,20 +28,21 @@ const CustomerLoginForm = props => {
       <Form.Group controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control
+          required
           type="email"
           placeholder="Enter email"
           value={email}
-          onChange={(event) => setEmail(event.target.value)}
+          onChange={event => setEmail(event.target.value)}
         />
       </Form.Group>
 
       <Form.Group controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
         <Form.Control
+          required
           type="password"
-          placeholder="Password"
           value={password}
-          onChange={(event) => setPassword(event.target.value)}
+          onChange={event => setPassword(event.target.value)}
         />
       </Form.Group>
 
@@ -49,10 +50,7 @@ const CustomerLoginForm = props => {
         <Button variant="secondary" onClick={props.onCancel}>
           Cancel
         </Button>
-        <Button
-          variant="primary"
-          onClick={onSubmit}
-        >
+        <Button variant="primary" onClick={onSubmit}>
           Login
         </Button>
       </ButtonToolbar>

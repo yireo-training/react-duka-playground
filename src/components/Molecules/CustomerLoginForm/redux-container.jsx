@@ -10,7 +10,7 @@ const CustomerLoginFormReduxContainer  = props => {
 
 const mapStateToProps = (state, props) => {
   props.token = state.customer.token;
-  props.locked = state.customer.locked;
+  props.locked = state.common.locked;
   return props;
 };
 

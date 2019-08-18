@@ -8,7 +8,8 @@ const CustomerLoginReduxContainer = props => {
 
 const mapStateToProps = state => {
   return {
-    customer: state.customer
+    customer: state.customer,
+    locked: state.common.locked
   };
 };
 

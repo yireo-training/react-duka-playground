@@ -5,9 +5,10 @@ import messagesActions from "../../messages/actions";
 import commonActions from "../../common/actions";
 
 export default async (store, action) => {
-  console.log(store);
   if (!action.email || !action.password) {
-    throw new Error("loginCustomer action called without valid email or password");
+    store.dispatch(messagesActions.addMessage("Invalid email or password", "danger"));
+    store.dispatch(commonActions.unlock());
+    return;
   }
 
   try {
@@ -19,13 +20,15 @@ export default async (store, action) => {
     });
 
     if (!data.generateCustomerToken || !data.generateCustomerToken.token) {
-      throw new Error("Empty customer token");
+      console.log("GraphQL response", data);
+      throw new Error("No customer token received");
     }
-  
-    store.dispatch(customerActions.setCustomerToken(data.generateCustomerToken.token));
-    store.dispatch(messagesActions.addMessage('You have logged in', "info"));
-    store.dispatch(commonActions.unlock());
 
+    store.dispatch(
+      customerActions.setCustomerToken(data.generateCustomerToken.token)
+    );
+    store.dispatch(messagesActions.addMessage("You have logged in", "info"));
+    store.dispatch(commonActions.unlock());
   } catch (error) {
     console.log(error);
     store.dispatch(messagesActions.addMessage(error.toString(), "danger"));
