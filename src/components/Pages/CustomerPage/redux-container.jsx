@@ -1,10 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
 import { customerActions } from "state/redux/ducks/customer";
-import ChildComponent from "./query-container";
+import CustomerPageQueryContainer from "./query-container";
 
-const StateContainer = props => {
-  return <ChildComponent {...props} />
+const CustomerPageReduxContainer = props => {
+  return <CustomerPageQueryContainer {...props} />
 };
 
 const mapStateToProps = state => {
@@ -24,4 +24,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(StateContainer);
+)(CustomerPageReduxContainer);

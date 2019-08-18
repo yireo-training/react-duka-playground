@@ -2,12 +2,13 @@ import React from "react";
 import { loader } from "graphql.macro";
 import { Query } from "react-apollo";
 import Loading from "../../Utils/Loading";
-import LoginForm from "./LoginForm";
-import CustomerPageView from "./Dashboard";
+import Dashboard from "./Dashboard";
+import CustomerPage from "./component";
+import { Redirect } from "react-router-dom";
 
-const QueryContainer = props => {
+const CustomerPageQueryContainer = props => {
   if (!props.customerToken) {
-    return <LoginForm />;
+    return <Redirect to="/login" />;
   }
 
   const customerQuery = loader("state/graphql/queries/customer.graphql");
@@ -28,13 +29,14 @@ const QueryContainer = props => {
     >
       {({ loading, error, data }) => {
         if (loading) return <Loading />;
-        if (error) return <LoginForm />;
+        if (error) return <Redirect to="/login" />;
 
-        const newProps = Object.assign({}, props, {data: data});
-        return <CustomerPageView {...newProps} />;
+        const contentComponent = props.content ? props.content : Dashboard;
+        const newProps = Object.assign({}, props, { data: data });
+        return <CustomerPage {...newProps} content={contentComponent} />;
       }}
     </Query>
   );
 };
 
-export default QueryContainer;
+export default CustomerPageQueryContainer;
