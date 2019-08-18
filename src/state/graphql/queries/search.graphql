@@ -1,0 +1,34 @@
+query Search($search: String) {
+  products(search: $search) {
+    items {
+      id
+      name
+      sku
+      created_at
+      stock_status
+      description {
+        __html:html
+      }
+      country_of_manufacture
+      fashion_material
+      image {
+        label
+        url
+      }
+      media_gallery_entries {
+        content {
+          base64_encoded_data
+        }
+      }
+      stock_status
+      price {
+        regularPrice {
+          amount {
+            currency
+            value
+          }
+        }
+      }
+    }
+  }
+}

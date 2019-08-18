@@ -3,6 +3,7 @@ import cartReducer, { cartMiddleware, cartInitialState } from "./ducks/cart";
 import customerReducer, { customerMiddleware, customerInitialState } from "./ducks/customer";
 import messagesReducer, { messagesInitialState } from "./ducks/messages";
 import commonReducer, { commonMiddleware } from "./ducks/common";
+import searchReducer from "./ducks/search";
 
 import { autoRehydrate } from "redux-phoenix"; // @todo: Load from session storage
 
@@ -10,6 +11,7 @@ const reducers = combineReducers({
   cart: cartReducer,
   messages: messagesReducer,
   customer: customerReducer,
+  search: searchReducer,
   common: commonReducer
 });
 

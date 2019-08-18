@@ -1,12 +1,11 @@
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import Categories from "./Categories";
 import MiniCart from "./MiniCart";
 import CustomerLogin from "./CustomerLogin";
 import { Link } from "react-router-dom";
+import QuickSearch from "./QuickSearch";
 
 const Navigation = () => {
   return (
@@ -33,14 +32,7 @@ const Navigation = () => {
           <Nav className="mr-auto">
             <Categories />
           </Nav>
-          <Form inline>
-            <Form.Control
-              type="text"
-              placeholder="Search"
-              className="mr-sm-2"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
+          <QuickSearch />
         </Navbar.Collapse>
       </Navbar>
     </div>

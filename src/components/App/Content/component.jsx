@@ -7,6 +7,7 @@ import CheckoutPage from "components/Pages/CheckoutPage";
 import LoginPage from "components/Pages/LoginPage";
 import LogoutPage from "components/Pages/LogoutPage";
 import CartPage from "components/Pages/CartPage";
+import SearchPage from "components/Pages/SearchPage";
 import Page from "components/Pages/Page";
 import NotFoundPage from "components/Pages/NotFoundPage";
 import Messages from "components/Molecules/Messages";
@@ -39,6 +40,7 @@ const Content = () => {
         <Route exact path="/customer/account/logout" component={LogoutPage} />
         <Route exact path="/checkout" component={CheckoutPage} />
         <Route exact path="/cart" component={CartPage} />
+        <Route exact path="/search" component={SearchPage} />
         <Route path="/:url_key" component={Page} />
         <Route component={NotFoundPage} />
       </Switch>
