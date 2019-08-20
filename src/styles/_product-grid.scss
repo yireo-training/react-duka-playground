@@ -1,0 +1,8 @@
+.products-grid,
+.products-list {
+    > ol, 
+    > ul {
+        list-style-type: none;
+        padding: 0;
+    }
+}
