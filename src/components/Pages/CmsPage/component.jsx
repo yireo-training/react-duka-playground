@@ -1,13 +1,35 @@
 import React from "react";
 import SanitizedHTML from "react-sanitized-html";
 
-const CmsPage = props => {
+const CmsPage = ({ title, content }) => {
+  const safeTags = [
+    "div",
+    "span",
+    "p",
+    "b",
+    "i",
+    "em",
+    "strong",
+    "ul",
+    "ol",
+    "li",
+    "a",
+    "img"
+  ];
+
+  const safeAtrr = {
+    a: ["href"],
+    div: ["class"],
+    img: ["src", "alt"]
+  };
+
   return (
     <div className="cmsPage">
-      <h1>{props.title}</h1>
+      <h1>{title}</h1>
       <SanitizedHTML
-        html={props.content}
-        allowedTags={["b", "i", "em", "strong", "a", "img"]}
+        html={content}
+        allowedTags={safeTags}
+        allowedAttributes={safeAtrr}
       />
     </div>
   );
