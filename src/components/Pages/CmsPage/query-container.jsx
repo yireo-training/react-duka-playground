@@ -2,7 +2,7 @@ import React from "react";
 import { Query } from "react-apollo";
 import { loader } from "graphql.macro";
 
-import CmsPage from "./CmsPage";
+import CmsPage from "./component";
 import Loading from "components/Utils/Loading";
 import Debug from "components/Test/Debug";
 
@@ -25,3 +25,5 @@ const CmsPageQueryContainer = ({ id }) => {
     </Query>
   );
 };
+
+export default CmsPageQueryContainer;
