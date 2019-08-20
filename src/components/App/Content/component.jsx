@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router";
+import { Container } from "react-bootstrap";
 
 import HomePage from "components/Pages/HomePage/component";
 import CustomerPage from "components/Pages/CustomerPage";
@@ -17,7 +18,7 @@ import "./component.css";
 
 const Content = () => {
   return (
-    <div className="Content">
+    <Container className="Content">
       <Messages />
       <Switch>
         <Route exact path="/" component={HomePage} />
@@ -44,7 +45,7 @@ const Content = () => {
         <Route path="/:url_key" component={Page} />
         <Route component={NotFoundPage} />
       </Switch>
-    </div>
+    </Container>
   );
 };
 

@@ -1,15 +1,15 @@
 import React from "react";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
+import { Link } from "react-router-dom";
+import { Container, Navbar, Nav } from "react-bootstrap";
+
 import Categories from "./Categories";
 import MiniCart from "./MiniCart";
 import CustomerLogin from "./CustomerLogin";
-import { Link } from "react-router-dom";
 import QuickSearch from "./QuickSearch";
 
-const Navigation = () => {
-  return (
-    <div className="Navigation">
+const Navigation = () => (
+  <div className="Navigation">
+    <Container>
       <Nav className="justify-content-end" activeKey="/home">
         <Nav.Item>
           <Link to="/checkout" className="nav-link" role="button">
@@ -23,9 +23,11 @@ const Navigation = () => {
           <MiniCart />
         </Nav.Item>
       </Nav>
-      <Navbar bg="dark" variant="dark" expand="lg">
+    </Container>
+    <Navbar bg="dark" variant="dark" expand="lg">
+      <Container>
         <Link to="/" className="navbar-brand" role="button">
-          Apollo<span style={{ color: "lightblue" }}>Playground</span>
+          Yireo <span style={{ color: "#c82529" }}>Playground</span>
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -34,9 +36,9 @@ const Navigation = () => {
           </Nav>
           <QuickSearch />
         </Navbar.Collapse>
-      </Navbar>
-    </div>
-  );
-};
+      </Container>
+    </Navbar>
+  </div>
+);
 
 export default Navigation;
