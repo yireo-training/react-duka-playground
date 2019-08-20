@@ -8,7 +8,7 @@ const HomePage = () => {
     <div className="HomePage">
       <CmsPage id={2} />
       <div className="sidebar">
-        <CmsBlock id="example" />
+        <CmsBlock id="sale-left-menu-block" />
       </div>
     </div>
   );
