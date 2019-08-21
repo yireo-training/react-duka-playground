@@ -1,18 +1,23 @@
 import React from "react";
 import { Query } from "react-apollo";
-import Loading from "components/Utils/Loading";
 import { loader } from "graphql.macro";
-import Debug from "components/Test/Debug";
-import CmsPage from "./component";
 
-const CmsPageQueryContainer = props => {
+import CmsPage from "./component";
+import Loading from "components/Utils/Loading";
+import Debug from "components/Test/Debug";
+
+const CmsPageQueryContainer = ({ id }) => {
   const cmsPageQuery = loader("state/graphql/queries/cmsPage.graphql");
+  const queryVars = {
+    id: id
+  };
 
   return (
-    <Query query={cmsPageQuery} variables={{ id: props.id }}>
+    <Query query={cmsPageQuery} variables={queryVars}>
       {({ loading, error, data }) => {
         if (loading) return <Loading />;
         if (error) return <Debug data={error.message} />;
+
         return (
           <CmsPage title={data.cmsPage.title} content={data.cmsPage.content} />
         );

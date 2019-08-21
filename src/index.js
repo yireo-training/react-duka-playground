@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "components/App";
+import "./index.scss";
 import { BrowserRouter } from "react-router-dom";
 import { ApolloProvider } from "react-apollo";
 import { Provider as ReduxProvider } from "react-redux";
-import persistStore from 'redux-phoenix';
+import persistStore from "redux-phoenix";
 
 import apolloClient from "state/graphql/apollo-client";
 import reduxStore from "state/redux/store";
@@ -18,7 +19,8 @@ persistStore(reduxStore).then(reduxStore => {
           <App />
         </BrowserRouter>
       </ReduxProvider>
-    </ApolloProvider>, document.getElementById('root')
+    </ApolloProvider>,
+    document.getElementById("root")
   );
 });
 
