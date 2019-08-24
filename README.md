@@ -2,7 +2,7 @@
 
 A prototype e-commerce project that connects a React app (using Redux, Apollo Client and React Bootstrap) to a Magento 2.3 GraphQL site. Currently, the following functionality is working:
 
-- Displaying products, categories, CMS-pages
+- Displaying products, categories, CMS-pages (including routing)
 - Navigation showing top-level categories
 - Showing messages in the message area (with auto-hide)
 - Adding simple products to cart (without custom options)
@@ -11,13 +11,19 @@ A prototype e-commerce project that connects a React app (using Redux, Apollo Cl
 
 This package is not bundled with a package lock, so let's pray that this works nicely. Just install the packages from `packages.json` using yarn or npm:
 
-    npm install // or:  yarn install
+```bash
+npm install # or
+yarn install
+```
 
 Next, copy the `src/config.js.dist` file to `src/config.js` and modify your Magento GraphQL URL.
 
 Afterwards, start the app:
 
-    npm start // or: yarn start
+```bash
+npm start # or
+yarn start
+```
 
 ## Architecture
 
