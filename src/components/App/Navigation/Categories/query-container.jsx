@@ -18,9 +18,7 @@ const CategoriesQueryContainer = () => {
           if (!data.category.children) return <></>;
 
           const categories = data.category.children;
-          return (
-            <Categories categories={categories} />
-          );
+          return <Categories categories={categories} />;
         }}
       </Query>
     </>
