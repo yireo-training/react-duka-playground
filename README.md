@@ -35,7 +35,6 @@ The cart and customer ducks use a `locked` variable to prevent multiple simultan
 
 ## Todo
 
-- Navigation with submenus (secondary and tertiary categories)
 - Optimize caching
 - Product options
 - Checkout
