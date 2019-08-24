@@ -27,7 +27,7 @@ const Navigation = () => (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
         <Link to="/" className="navbar-brand" role="button">
-          Apollo <span style={{ color: "#c82529" }}>Playground</span>
+          Duka <span style={{ color: "#c82529" }}>for React</span>
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
