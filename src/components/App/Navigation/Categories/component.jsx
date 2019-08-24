@@ -8,7 +8,7 @@ const Categories = props => {
     <>
       {props.categories.map(category => (
         <Fragment key={category.url_path}>
-          {!category.children.length && (
+          {category.children.length === 0 && (
             <Link
               to={urlCreator(category.url_path)}
               className="nav-link"
@@ -18,7 +18,7 @@ const Categories = props => {
             </Link>
           )}
 
-          {category.children.length && (
+          {category.children.length > 0 && (
             <NavDropdown title={category.name}>
               <Link
                 to={urlCreator(category.url_path)}
@@ -27,6 +27,7 @@ const Categories = props => {
               >
                 ALL {category.name}
               </Link>
+
               {category.children.map(subcategory => (
                 <Link
                   key={subcategory.id}
