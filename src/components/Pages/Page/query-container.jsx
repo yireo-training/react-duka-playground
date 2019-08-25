@@ -21,7 +21,7 @@ const PageQueryContainer = props => {
         if (loading) return <Loading />;
         if (error) return <ErrorPage error={error.message} />;
 
-        if (!data.urlResolver || !data.urlResolver.id)
+        if (!data.urlResolver || !data.urlResolver.id || !data.urlResolver.type)
           return <NotFoundPage reason="No resolver information found" />;
 
         if (data.urlResolver.type === "CATEGORY" && data.urlResolver.id) {
