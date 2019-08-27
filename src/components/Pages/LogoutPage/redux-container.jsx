@@ -4,7 +4,7 @@ import { customerActions } from "state/redux/ducks/customer";
 import LogoutPage from "./component";
 
 const LogoutPageReduxContainer = props => {
-  return <LogoutPage {...props} />
+  return <LogoutPage {...props} />;
 };
 
 const mapStateToProps = state => {
