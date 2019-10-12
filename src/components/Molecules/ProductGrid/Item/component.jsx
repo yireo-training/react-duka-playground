@@ -10,7 +10,7 @@ const Product = props => {
   }
 
   const product = props.product;
-  const productLink = product.url_key + ".html";
+  const productLink = "/" + product.url_key + ".html";
 
   return (
     <div className="Product">

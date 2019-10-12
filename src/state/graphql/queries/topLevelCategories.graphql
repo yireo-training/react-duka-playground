@@ -1,9 +1,14 @@
 query {
-  category(id:2) {
+  category(id: 2) {
     children {
-      url_key
+      url_path
       id
       name
+      children {
+        url_path
+        id
+        name
+      }
     }
   }
 }

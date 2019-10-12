@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./component.css";
 
 const Footer = () => {
@@ -10,7 +11,11 @@ const Footer = () => {
           <Col>
             <nav>
               <ul>
-                <li>item 1</li>
+                <li>
+                  <Link to="/privacy-policy-cookie-restriction-mode">
+                    Privacy Policy
+                  </Link>
+                </li>
                 <li>item 2</li>
                 <li>item 3</li>
               </ul>
