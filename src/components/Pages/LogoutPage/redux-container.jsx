@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { customerActions } from "state/redux/ducks/customer";
 import LogoutPage from "./component";
 
 const LogoutPageReduxContainer = props => {
+  useEffect(() => {
+    props.logoutCustomer();
+  }, [props]);
+
   return <LogoutPage {...props} />;
 };
 

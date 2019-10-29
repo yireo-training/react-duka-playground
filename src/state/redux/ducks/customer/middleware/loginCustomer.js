@@ -6,7 +6,9 @@ import commonActions from "../../common/actions";
 
 export default async (store, action) => {
   if (!action.email || !action.password) {
-    store.dispatch(messagesActions.addMessage("Invalid email or password", "danger"));
+    store.dispatch(
+      messagesActions.addMessage("Invalid email or password", "danger")
+    );
     store.dispatch(commonActions.unlock());
     return;
   }
@@ -27,6 +29,7 @@ export default async (store, action) => {
     store.dispatch(
       customerActions.setCustomerToken(data.generateCustomerToken.token)
     );
+    store.dispatch(messagesActions.cleanMessages());
     store.dispatch(messagesActions.addMessage("You have logged in", "info"));
     store.dispatch(commonActions.unlock());
   } catch (error) {

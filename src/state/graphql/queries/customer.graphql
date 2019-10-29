@@ -1,10 +1,11 @@
-query myCustomer {
+query customer {
   customer {
     firstname
     middlename
     lastname
     email
     addresses {
+      id
       city
       company
       country_id

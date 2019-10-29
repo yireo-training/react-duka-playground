@@ -9,16 +9,19 @@ const QuickSearchReduxContainer = props => {
 
 const mapStateToProps = state => {
   return {
-    search: state.search
+    search: state.search.search
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    onSearch: (search) => {
+    onSearch: search => {
       dispatch(searchActions.updateSearch(search));
     }
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(QuickSearchReduxContainer);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(QuickSearchReduxContainer);

@@ -3,7 +3,7 @@ import Order from "./Order";
 import Table from "react-bootstrap/Table";
 
 const Orders = props => {
-  const orders = props.data.customerOrders.items;
+  const orders = props.data.customerOrders.items || [];
   return (
     <div className="Orders">
       <h1>Orders</h1>

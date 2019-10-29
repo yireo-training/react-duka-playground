@@ -5,11 +5,10 @@ const Item = props => {
   if (props.autoClose) {
     setTimeout(() => {
       props.onClose();
-    }, 4000);
+    }, 10000);
   }
 
-  let message = props.text;
-  message = message.replace('Error: GraphQL error: ', '');
+  let message = props.text.replace("Error: GraphQL error: ", "");
 
   return (
     <Alert

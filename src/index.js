@@ -24,4 +24,4 @@ persistStore(reduxStore).then(reduxStore => {
   );
 });
 
-serviceWorker.unregister();
+serviceWorker.register();

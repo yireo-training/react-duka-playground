@@ -40,7 +40,14 @@ const removeMessage = (messageText, messageType = "info") => {
   };
 };
 
+const cleanMessages = () => {
+  return {
+    type: types.CLEAN_MESSAGES
+  };
+};
+
 export default {
   addMessage,
-  removeMessage
+  removeMessage,
+  cleanMessages
 };

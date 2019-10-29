@@ -1,13 +1,14 @@
 query ProductPage($url_key: String) {
-  products(filter: {url_key: {like: $url_key}}) {
+  products(filter: { url_key: { like: $url_key } }) {
     items {
       id
       name
       sku
+      url_key
       created_at
       stock_status
       description {
-        __html:html
+        __html: html
       }
       country_of_manufacture
       fashion_material

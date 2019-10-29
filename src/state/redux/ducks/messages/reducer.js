@@ -13,19 +13,29 @@ const removeMessageReducer = (state, action) => {
   let currentMessages = state.items ? state.items : [];
   let newMessages = [...currentMessages];
   newMessages.map((message, index) => {
-    if (message.text === action.messageText)
-    newMessages.splice(index, 1);
+    if (message.text === action.messageText) newMessages.splice(index, 1);
     return message;
   });
 
   return Object.assign({}, state, { items: newMessages });
 };
 
+// Clean messages
+const cleanMessagesReducer = (state, action) => {
+  let newMessages = [];
+  return Object.assign({}, state, { items: newMessages });
+};
+
 // Main reducer
 const messagesReducer = (state, action) => {
   if (state === undefined) return {};
-  if (action.type === types.ADD_MESSAGE) return addMessageReducer(state, action);
-  if (action.type === types.REMOVE_MESSAGE) return removeMessageReducer(state, action);
+  if (action.type === types.ADD_MESSAGE)
+    return addMessageReducer(state, action);
+  if (action.type === types.REMOVE_MESSAGE)
+    return removeMessageReducer(state, action);
+  if (action.type === types.CLEAN_MESSAGES)
+    return cleanMessagesReducer(state, action);
+
   return state;
 };
 

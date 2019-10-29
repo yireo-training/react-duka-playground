@@ -1,6 +1,6 @@
 export default {
   token: "",
-  email: "",
-  firstName: "",
-  lastName: ""
+  data: {
+    email: ""
+  }
 };

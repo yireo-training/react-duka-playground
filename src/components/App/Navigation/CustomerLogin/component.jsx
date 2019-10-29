@@ -7,6 +7,10 @@ import { Link } from "react-router-dom";
 const CustomerLogin = props => {
   const [showLoginBox, setShowLoginBox] = useState(false);
 
+  const onAfterLogin = () => {
+    setShowLoginBox(false);
+  };
+
   const onClickToLogin = () => {
     setShowLoginBox(!showLoginBox);
   };
@@ -36,7 +40,7 @@ const CustomerLogin = props => {
             </p>
             <CustomerLoginForm
               onCancel={() => setShowLoginBox(false)}
-              onSubmitCallback={() => setShowLoginBox(false)}
+              onSubmitCallback={onAfterLogin}
             />
           </Modal.Body>
         </Modal>

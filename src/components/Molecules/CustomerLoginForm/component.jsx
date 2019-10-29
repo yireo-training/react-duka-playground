@@ -27,21 +27,23 @@ const CustomerLoginForm = props => {
     <Form>
       <Form.Group controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
-        <Form.Control
+        <input
           required
           type="email"
           placeholder="Enter email"
           value={email}
+          className="form-control"
           onChange={event => setEmail(event.target.value)}
         />
       </Form.Group>
 
       <Form.Group controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
-        <Form.Control
+        <input
           required
           type="password"
           value={password}
+          className="form-control"
           onChange={event => setPassword(event.target.value)}
         />
       </Form.Group>

@@ -3,11 +3,12 @@ query Search($search: String) {
     items {
       id
       name
+      url_key
       sku
       created_at
       stock_status
       description {
-        __html:html
+        __html: html
       }
       country_of_manufacture
       fashion_material

@@ -1,6 +1,6 @@
 import types from "./types";
-import loginCustomerReducer from "./reducers/loginCustomer";
-import logoutCustomerReducer from "./reducers/logoutCustomer";
+import postLogoutCustomerReducer from "./reducers/postLogoutCustomer";
+import setCustomerDataReducer from "./reducers/setCustomerData";
 import setCustomerTokenReducer from "./reducers/setCustomerToken";
 
 // Main reducer
@@ -9,12 +9,12 @@ const customerReducer = (state, action) => {
     return {};
   }
 
-  if (action.type === types.LOGIN_CUSTOMER) {
-    return loginCustomerReducer(state, action);
+  if (action.type === types.POST_LOGOUT_CUSTOMER) {
+    return postLogoutCustomerReducer(state, action);
   }
 
-  if (action.type === types.LOGOUT_CUSTOMER) {
-    return logoutCustomerReducer(state, action);
+  if (action.type === types.SET_CUSTOMER_DATA) {
+    return setCustomerDataReducer(state, action);
   }
 
   if (action.type === types.SET_CUSTOMER_TOKEN) {

@@ -20,9 +20,6 @@ const CustomerMenu = () => {
       <Link to="/customer/addressbook" className="nav-link" role="button">
         Address Book
       </Link>
-      <Link to="/customer/account" className="nav-link" role="button">
-        Account
-      </Link>
       <Link to="/customer/account/logout" className="nav-link" role="button">
         Logout
       </Link>
