@@ -33,6 +33,11 @@ Redux uses the ducks-standard with 3 ducks (cart, customer, messages) to group a
 
 The cart and customer ducks use a `locked` variable to prevent multiple simultaneous actions. Using a `setLock(true, callback)` action, the lock is set. When calling upon `setLock(false)`, the lock will be liften and the callback will be called as well. The callback allows for the Redux middleware (handling GraphQL things asyncronously) to send a message to the local component to update the local state.
 
+## Development
+This project uses `plop`, so you can easily create new components using a command like this:
+
+    npm run generate component Example
+
 ## Todo
 
 - Optimize caching
