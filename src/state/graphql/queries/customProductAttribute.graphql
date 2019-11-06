@@ -1,0 +1,14 @@
+query customProductAttribute($attribute_code: String) {
+  customAttributeMetadata(
+    attributes: { entity_type: "4", attribute_code: $attribute_code }
+  ) {
+    items {
+      attribute_code
+      attribute_options {
+        label
+        value
+      }
+      attribute_type
+    }
+  }
+}

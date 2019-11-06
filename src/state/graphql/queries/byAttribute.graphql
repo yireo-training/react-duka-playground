@@ -1,0 +1,11 @@
+query byAttibute($attribute_code: String) {
+  productAttribute(code: $attribute_code) {
+    code
+    id
+    options {
+      label
+      product_count
+      value
+    }
+  }
+}
