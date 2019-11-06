@@ -1,4 +1,4 @@
-query cmsPage($id: Int) {
+query cmsPage($id: Int) @cache(id: "cms-page", timeout: 3600, modifier: ["id"]) {
     cmsPage(id: $id) {
       content
       title

@@ -1,4 +1,4 @@
-query {
+query topLevelCategories @cache(id: "top-level-categories", timeout: 3600) {
   category(id: 2) {
     children {
       url_path

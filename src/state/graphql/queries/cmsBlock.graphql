@@ -1,4 +1,4 @@
-query cmsBlock($id:String) {
+query cmsBlock($id:String) @cache(id: "cms-block", timeout: 3600, modifier: ["id"]) {
   cmsBlocks(identifiers: [
     $id
   ]){

@@ -1,4 +1,4 @@
-query CategoryPage($id:Int) {
+query CategoryPage($id:Int) @cache(id: "category-page", timeout: 3600, modifier: ["id"]) {
     category(id:$id) {
       name
       image

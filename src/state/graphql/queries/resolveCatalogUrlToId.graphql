@@ -1,4 +1,4 @@
-query resolve($url:String!) {
+query resolve($url:String!) @cache(id: "url-resolver", timeout: 3600, modifier: ["url"]) {
   urlResolver(url: $url) {
     id
     type
