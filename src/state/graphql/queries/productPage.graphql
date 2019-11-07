@@ -1,4 +1,4 @@
-query ProductPage($url_key: String) @cache(id: "product-page", timeout: 3600, modifier: ["url_key"]) {
+query ProductPage($url_key: String) {
   products(filter: { url_key: { like: $url_key } }) {
     items {
       id

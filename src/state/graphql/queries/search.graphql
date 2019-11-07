@@ -1,4 +1,4 @@
-query Search($search: String) @cache(id: "productSearch", timeout: 3600, modifier: ["search"]) {
+query Search($search: String) {
   products(search: $search) {
     items {
       id

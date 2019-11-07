@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@fylgja/utilkit": "^1.0.3",
+    "@storybook/react": "^5.2.5",
     "apollo-boost": "^0.4.3",
     "apollo-client": "^2.6.3",
     "bootstrap": "^4.3.1",
@@ -33,7 +34,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "generate": "plop"
+    "generate": "plop",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -51,6 +54,11 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.7.0",
+    "@storybook/addon-actions": "^5.2.5",
+    "@storybook/addon-links": "^5.2.5",
+    "@storybook/addons": "^5.2.5",
+    "babel-loader": "^8.0.6",
     "plop": "^2.4.0"
   }
 }
