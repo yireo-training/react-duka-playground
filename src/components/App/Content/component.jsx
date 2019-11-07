@@ -15,6 +15,8 @@ import Messages from "components/Molecules/Messages";
 import customerPages from "./customerPages";
 import "./component.css";
 
+import { ContainerBelowContent } from "utils/teleporter"
+
 const Content = () => {
   return (
     <Container className="Content">
@@ -43,6 +45,7 @@ const Content = () => {
         <Route exact path="/search" component={SearchPage} />
         <Route component={Page} />
       </Switch>
+      <ContainerBelowContent.Target />
     </Container>
   );
 };
