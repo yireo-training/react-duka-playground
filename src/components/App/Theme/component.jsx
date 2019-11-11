@@ -1,10 +1,11 @@
 import React from "react"
 import { ContainerBelowContent } from "utils/teleporter"
+import Foobar from "./Foobar";
 
 const Theme = () => {
   return (
     <>
-      <ContainerBelowContent.Source>Some content below content</ContainerBelowContent.Source>
+      <ContainerBelowContent.Source><Foobar /></ContainerBelowContent.Source>
     </>
   );
 }

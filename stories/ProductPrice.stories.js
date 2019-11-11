@@ -5,11 +5,11 @@ export default {
   title: 'Product Price'
 };
 
-export const productWithoutPrice = () => <Price />
+//export const productWithoutPrice = () => <Price />
 
-productWithoutPrice.story = {
-  name: 'Product without price',
-};
+//productWithoutPrice.story = {
+//  name: 'Product without price',
+//};
 
 const product = {
   price: {

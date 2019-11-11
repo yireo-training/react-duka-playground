@@ -1,0 +1,21 @@
+{
+  "data": {
+    "products": {
+      "total_count": 1,
+      "items": [
+        {
+          "sku": "VA22-SI-NA",
+          "name": "Silver Amor Bangle Set",
+          "price": {
+            "regularPrice": {
+              "amount": {
+                "currency": "USD",
+                "value": 98
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

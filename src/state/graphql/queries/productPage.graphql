@@ -30,6 +30,15 @@ query ProductPage($url_key: String) {
           }
         }
       }
+      type_id
+      ... on SimpleProduct {
+        options {
+         option_id
+          required
+          sort_order
+          title
+        }
+      }
     }
   }
 }
