@@ -1,0 +1,289 @@
+{
+  "state": {
+    "customer": {
+      "id": 2,
+      "email": "milic@jolausa.com",
+      "firstname": "Milic",
+      "lastname": "Stankovic",
+      "group_id": 1,
+      "taxvat": null,
+      "addresses": [
+        {
+          "id": 1,
+          "default_billing": true,
+          "default_shipping": false,
+          "firstname": "zzzPeracacacaasaSAA",
+          "lastname": "StankovicSADSADSADSAD",
+          "street": ["Test 123"],
+          "company": "addddd",
+          "country_id": "US",
+          "region": {
+            "region": "Colorado",
+            "region_id": 13,
+            "region_code": "CO",
+            "__typename": "CustomerAddressRegion"
+          },
+          "region_id": 13,
+          "city": "New York",
+          "postcode": "18000",
+          "__typename": "CustomerAddress"
+        },
+        {
+          "id": 2,
+          "default_billing": false,
+          "default_shipping": true,
+          "firstname": "Milic",
+          "lastname": "Stankovic",
+          "street": ["Rararra"],
+          "company": "JolaUsa",
+          "country_id": "JP",
+          "region": {
+            "region": "Shibuya",
+            "region_id": 0,
+            "region_code": "Shibuya",
+            "__typename": "CustomerAddressRegion"
+          },
+          "region_id": 0,
+          "city": "Test Jola 123",
+          "postcode": "123456",
+          "__typename": "CustomerAddress"
+        }
+      ],
+      "__typename": "Customer",
+      "token": "o06xaahdps14lqikawanvcwdu4avgdle2"
+    },
+    "loading": false
+  },
+  "common": {
+    "timestamp": 1572619445719,
+    "authorize": true,
+    "flag": "ready",
+    "cache": "1572535119",
+    "modal": { "loginModal": false },
+    "locked": false,
+    "loading": false
+  },
+  "messages": { "items": [] },
+  "queries": {
+    "items": {},
+    "temp": {},
+    "data": {
+      "2": {
+        "data": {
+          "category": {
+            "id": 2,
+            "name": "Default Category",
+            "description": null,
+            "include_in_menu": 1,
+            "url_path": null,
+            "thumbnail_image": null,
+            "path": "1/2",
+            "children": [
+              {
+                "id": 10,
+                "name": "Brands",
+                "description": null,
+                "thumbnail_image": "MENU_Brands-House_Brands.jpg",
+                "url_key": "brands",
+                "url_path": "brands",
+                "include_in_menu": 1,
+                "path": "1/2/10",
+                "children": [
+                  {
+                    "id": 12,
+                    "name": "National Brand",
+                    "description": null,
+                    "thumbnail_image": null,
+                    "url_key": "national-brand",
+                    "url_path": "brands/national-brand",
+                    "include_in_menu": 1,
+                    "path": "1/2/10/12",
+                    "children": [
+                      {
+                        "id": 16,
+                        "name": "Internation Brand #1",
+                        "description": null,
+                        "thumbnail_image": null,
+                        "url_key": "internation-brand-1",
+                        "url_path": "brands/national-brand/internation-brand-1",
+                        "include_in_menu": 1,
+                        "path": "1/2/10/12/16",
+                        "__typename": "CategoryTree"
+                      }
+                    ],
+                    "__typename": "CategoryTree"
+                  },
+                  {
+                    "id": 11,
+                    "name": "House  Brands",
+                    "description": "<p>Test1</p>",
+                    "thumbnail_image": "KW1010A_1.jpg",
+                    "url_key": "house-brands",
+                    "url_path": "brands/house-brands",
+                    "include_in_menu": 1,
+                    "path": "1/2/10/11",
+                    "children": [
+                      {
+                        "id": 15,
+                        "name": "My Garden",
+                        "description": "<p>test1</p>",
+                        "thumbnail_image": "KW1009A.jpg",
+                        "url_key": "my-garden",
+                        "url_path": "brands/house-brands/my-garden",
+                        "include_in_menu": 1,
+                        "path": "1/2/10/11/15",
+                        "__typename": "CategoryTree"
+                      }
+                    ],
+                    "__typename": "CategoryTree"
+                  },
+                  {
+                    "id": 14,
+                    "name": "International Brands",
+                    "description": null,
+                    "thumbnail_image": null,
+                    "url_key": "international-brands",
+                    "url_path": "brands/international-brands",
+                    "include_in_menu": 0,
+                    "path": "1/2/10/14",
+                    "children": [],
+                    "__typename": "CategoryTree"
+                  }
+                ],
+                "__typename": "CategoryTree"
+              },
+              {
+                "id": 13,
+                "name": "Products",
+                "description": null,
+                "thumbnail_image": "MENU_Products.jpg",
+                "url_key": "products",
+                "url_path": "products",
+                "include_in_menu": 1,
+                "path": "1/2/13",
+                "children": [
+                  {
+                    "id": 9,
+                    "name": "Closeouts",
+                    "description": null,
+                    "thumbnail_image": null,
+                    "url_key": "closeouts",
+                    "url_path": "products/closeouts",
+                    "include_in_menu": 1,
+                    "path": "1/2/13/9",
+                    "children": [],
+                    "__typename": "CategoryTree"
+                  },
+                  {
+                    "id": 8,
+                    "name": "Women's Accessories",
+                    "description": null,
+                    "thumbnail_image": null,
+                    "url_key": "women-s-accessories",
+                    "url_path": "products/women-s-accessories",
+                    "include_in_menu": 1,
+                    "path": "1/2/13/8",
+                    "children": [],
+                    "__typename": "CategoryTree"
+                  },
+                  {
+                    "id": 7,
+                    "name": "Electronics",
+                    "description": null,
+                    "thumbnail_image": null,
+                    "url_key": "electronics",
+                    "url_path": "products/electronics",
+                    "include_in_menu": 1,
+                    "path": "1/2/13/7",
+                    "children": [],
+                    "__typename": "CategoryTree"
+                  },
+                  {
+                    "id": 6,
+                    "name": "Auto",
+                    "description": null,
+                    "thumbnail_image": null,
+                    "url_key": "auto",
+                    "url_path": "products/auto",
+                    "include_in_menu": 1,
+                    "path": "1/2/13/6",
+                    "children": [],
+                    "__typename": "CategoryTree"
+                  },
+                  {
+                    "id": 5,
+                    "name": "Household",
+                    "description": null,
+                    "thumbnail_image": null,
+                    "url_key": "household",
+                    "url_path": "products/household",
+                    "include_in_menu": 1,
+                    "path": "1/2/13/5",
+                    "children": [],
+                    "__typename": "CategoryTree"
+                  },
+                  {
+                    "id": 4,
+                    "name": "Kitchen & Dining",
+                    "description": null,
+                    "thumbnail_image": null,
+                    "url_key": "kitchen-dining",
+                    "url_path": "products/kitchen-dining",
+                    "include_in_menu": 1,
+                    "path": "1/2/13/4",
+                    "children": [],
+                    "__typename": "CategoryTree"
+                  },
+                  {
+                    "id": 3,
+                    "name": "Camping & Outdoor",
+                    "description": null,
+                    "thumbnail_image": null,
+                    "url_key": "camping-outdoor",
+                    "url_path": "products/camping-outdoor",
+                    "include_in_menu": 1,
+                    "path": "1/2/13/3",
+                    "children": [],
+                    "__typename": "CategoryTree"
+                  }
+                ],
+                "__typename": "CategoryTree"
+              }
+            ],
+            "__typename": "CategoryTree"
+          }
+        }
+      },
+      "home-map": {
+        "data": {
+          "cmsBlocks": {
+            "items": [
+              {
+                "content": "<div class=\"map-image\"><img src=\"https://hglobalinc.joladev.com/pub/media/entire_map_with_pin.jpg\" alt=\"\" /></div>",
+                "identifier": "home-map",
+                "title": "Home | Map",
+                "__typename": "CmsBlock"
+              }
+            ],
+            "__typename": "CmsBlocks"
+          }
+        }
+      },
+      "promo-brands": {
+        "data": {
+          "cmsBlocks": {
+            "items": [
+              {
+                "content": "<div><img src=\"https://hglobalinc.joladev.com/pub/media/coleman.png\" alt=\"\"></div>\r\n<div><img src=\"https://hglobalinc.joladev.com/pub/media/coleman.png\" alt=\"\"></div>\r\n<div><img src=\"https://hglobalinc.joladev.com/pub/media/coleman.png\" alt=\"\"></div>\r\n<div><img src=\"https://hglobalinc.joladev.com/pub/media/coleman.png\" alt=\"\"></div>\r\n<div><img src=\"https://hglobalinc.joladev.com/pub/media/coleman.png\" alt=\"\" /></div>",
+                "identifier": "promo-brands",
+                "title": "Home | Promo Brands",
+                "__typename": "CmsBlock"
+              }
+            ],
+            "__typename": "CmsBlocks"
+          }
+        }
+      }
+    }
+  }
+}

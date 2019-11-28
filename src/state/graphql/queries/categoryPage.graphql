@@ -1,40 +1,40 @@
-query CategoryPage($id:Int) @cache(id: "category-page", timeout: 3600, modifier: ["id"]) {
-    category(id:$id) {
-      name
-      image
-      description
-      products {
-        items {
-          id
-          sku
-          name
-          stock_status
-          small_image {
-            label
-            url
-          }
-          url_key
-          price {
-            regularPrice {
-              amount {
-                currency
-                value
-              }
+query CategoryPage($id: Int) {
+  category(id: $id) {
+    name
+    image
+    description
+    products {
+      items {
+        id
+        sku
+        name
+        stock_status
+        small_image {
+          label
+          url
+        }
+        url_key
+        price {
+          regularPrice {
+            amount {
+              currency
+              value
             }
           }
-          short_description {
-            __html: html
-          }
-          description {
-            __html: html
-          }
         }
-        page_info {
-          current_page
-          page_size
-          total_pages
+        short_description {
+          __html: html
         }
-        total_count
+        description {
+          __html: html
+        }
       }
+      page_info {
+        current_page
+        page_size
+        total_pages
+      }
+      total_count
     }
   }
+}
