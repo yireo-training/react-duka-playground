@@ -5,7 +5,7 @@ import Foobar from "./Foobar";
 const Theme = () => {
   return (
     <>
-      <ContainerBelowContent.Source><Foobar /></ContainerBelowContent.Source>
+      <ContainerBelowContent.Source><Foobar label="fsdfs" /></ContainerBelowContent.Source>
     </>
   );
 }
