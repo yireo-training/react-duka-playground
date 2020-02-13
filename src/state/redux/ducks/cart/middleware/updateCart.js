@@ -18,6 +18,7 @@ const updateCart = async (store, action) => {
     store.dispatch(
       cartActions.setProducts(action.cartId, queryResult.data.cart.items)
     );
+
     //store.dispatch(messagesActions.addMessage('Cart has been synced', "info"));
     store.dispatch(commonActions.unlock());
   } catch (error) {

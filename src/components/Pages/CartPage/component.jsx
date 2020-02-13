@@ -51,6 +51,8 @@ const CartPage = props => {
           </Table>
         </div>
       </div>
+
+      <button onClick={props.updateCart}>Update cart</button>
     </div>
   );
 };

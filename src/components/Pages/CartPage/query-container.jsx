@@ -11,7 +11,7 @@ const CartPageQueryContainer = props => {
   }
 
   if (!props.cartId) {
-    return <EmptyCartPage />;
+    return <EmptyCartPage {...props} />;
   }
 
   return (
@@ -21,7 +21,8 @@ const CartPageQueryContainer = props => {
         if (error) return <ErrorPage error={error.message} />;
         if (!data.cart.items || !data.cart.items.length) return <EmptyCartPage />;
 
-        return <CartPage {...data} />;
+        const newProps = { ...props, ...data };
+        return <CartPage {...newProps} />;
       }}
     </Query>
   );
