@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./component.css";
+import { ContainerBelowContent } from "utils/teleporter"
 
 const Footer = () => {
   return (
@@ -21,7 +22,9 @@ const Footer = () => {
               </ul>
             </nav>
           </Col>
-          <Col>Some copyright</Col>
+          <Col>
+            <ContainerBelowContent.Target />
+          </Col>
         </Row>
       </Container>
     </div>
