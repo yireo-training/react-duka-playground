@@ -1,8 +1,9 @@
 import React from "react";
 import ProductGrid from "../../Molecules/ProductGrid";
 import Image from "react-bootstrap/Image";
+import config from "config";
 
-const categoryImageUrl = "http://m2.betelgeuse.yr/media/catalog/category/";
+const categoryImageUrl = magento_url + "/media/catalog/category/";
 
 const CategoryPage = props => {
   const category = props.category;

@@ -11,7 +11,7 @@ const headers = {
 };
 
 const httpLink = new HttpLink({
-  uri: config.magento_graphql_url,
+  uri: config.magento_url + 'graphql',
   headers: headers
 });
 
