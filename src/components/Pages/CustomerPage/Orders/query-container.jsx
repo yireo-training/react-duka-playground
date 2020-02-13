@@ -1,12 +1,13 @@
 import React from "react";
 import { loader } from "graphql.macro";
-import { Query } from "react-apollo";
 import Loading from "components/Utils/Loading";
 import ErrorPage from "components/Pages/ErrorPage";
 import Component from "./component";
+import { useQuery } from '@apollo/react-hooks';
+
+const query = loader("state/graphql/queries/customerOrders.graphql");
 
 const QueryContainer = props => {
-  const query = loader("state/graphql/queries/customerOrders.graphql");
   const token = props.customerToken;
   const context = {
     headers: {
@@ -14,20 +15,13 @@ const QueryContainer = props => {
     }
   };
 
-  return (
-    <Query
-      query={query}
-      context={context}
-    >
-      {({ loading, error, data }) => {
-        if (loading) return <Loading />;
-        if (error) return <ErrorPage error={error.message} />;
+  const { loading, error, data } = useQuery(query, { context });
 
-        const newProps = Object.assign({}, props, { data: data });
-        return <Component {...newProps} />;
-      }}
-    </Query>
-  );
+  if (loading) return <Loading />;
+  if (error) return <ErrorPage error={error.message} />;
+
+  const newProps = Object.assign({}, props, { data: data });
+  return <Component {...newProps} />;
 };
 
 export default QueryContainer;

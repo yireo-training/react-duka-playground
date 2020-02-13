@@ -1,30 +1,20 @@
 import React from "react";
-import { Query } from "react-apollo";
 import { loader } from "graphql.macro";
 import ErrorPage from "components/Pages/ErrorPage";
 import SearchPage from "./component";
+import { useQuery } from '@apollo/react-hooks';
+
+const query = loader("state/graphql/queries/search.graphql");
 
 const SearchPageQueryContainer = props => {
-  if (props.search.length < 3) {
-    return (
-      <SearchPage suggestion="Make sure to use more than 2 characters in your search" />
-    );
-  }
+  const { loading, error, data } = useQuery(query, { variables: { search: props.search } });
 
-  const query = loader("state/graphql/queries/search.graphql");
+  if (loading) return <SearchPage />;
+  if (error) return <ErrorPage error={error.message} />;
 
-  return (
-    <Query query={query} variables={{ search: props.search }}>
-      {({ loading, error, data }) => {
-        if (loading) return <SearchPage />;
-        if (error) return <ErrorPage error={error.message} />;
-
-        const products = data.products.items;
-        const newProps = Object.assign({}, props, { products: products });
-        return <SearchPage {...newProps} />;
-      }}
-    </Query>
-  );
+  const products = data.products.items;
+  const newProps = Object.assign({}, props, { products: products });
+  return <SearchPage {...newProps} />;
 };
 
 export default SearchPageQueryContainer;

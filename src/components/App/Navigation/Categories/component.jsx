@@ -4,6 +4,10 @@ import { NavDropdown } from "react-bootstrap";
 import urlCreator from "utils/urlCreator";
 
 const Categories = props => {
+  if (!props.categories) {
+    return <>No categories found</>
+  }
+
   return (
     <>
       {props.categories.map(category => (
