@@ -2,11 +2,12 @@ import { loader } from "graphql.macro";
 import apolloClient from "../../../../graphql/apollo-client";
 import messagesActions from "../../messages/actions";
 import commonActions from "../../common/actions";
+import cartActions from "../../cart/actions";
 import getCartId from "./getCartId";
 
-const removeProduct = async (store, action) => {
-  if (!action.sku) {
-    throw new Error("removeProduct action called with no valid SKU");
+const removeCartItem = async (store, action) => {
+  if (!action.id) {
+    throw new Error("removeCartItem action called with no valid ID: " + action.id);
   }
 
   action.cartId = await getCartId(store);
@@ -14,21 +15,23 @@ const removeProduct = async (store, action) => {
   try {
     await apolloClient.mutate({
       mutation: loader(
-        "../../../../graphql/mutations/removeProductFromCart.graphql"
+        "../../../../graphql/mutations/removeCartItem.graphql"
       ),
       variables: action
     });
-  
-    let messageText = 'Cart item "' + action.sku + '" removed';
+
+    let messageText = 'Cart item "' + action.id + '" removed';
+    store.dispatch(cartActions.updateCart());
     store.dispatch(messagesActions.addMessage(messageText, "info"));
     store.dispatch(commonActions.unlock());
 
   } catch (error) {
     console.log(error);
+    store.dispatch(cartActions.updateCart());
     store.dispatch(messagesActions.addMessage(error.toString(), "danger"));
     store.dispatch(commonActions.unlock());
     return;
   }
 };
 
-export default removeProduct;
+export default removeCartItem;

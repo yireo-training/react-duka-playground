@@ -26,8 +26,8 @@ const mapDispatchToProps = dispatch => {
     updateCart: () => {
       dispatch(cartActions.updateCart());
     },
-    removeProduct: sku => {
-      dispatch(cartActions.removeProduct(sku));
+    removeCartItem: id => {
+      dispatch(cartActions.removeCartItem(id));
     },
     unLock: () => {
       dispatch(cartActions.unlock());

@@ -4,7 +4,7 @@ import setProductsReducer from "./reducers/setProducts";
 import addProductReducer from "./reducers/addProduct";
 import updateCartReducer from "./reducers/updateCart";
 import updateProductReducer from "./reducers/updateProduct";
-import removeProductReducer from "./reducers/removeProduct";
+import removeCartItemReducer from "./reducers/removeCartItem";
 import lockReducer from "../common/reducers/lock";
 import unlockReducer from "../common/reducers/unlock";
 
@@ -34,8 +34,8 @@ const cartReducer = (state, action) => {
     return updateProductReducer(state, action);
   }
 
-  if (action.type === types.REMOVE_PRODUCT) {
-    return removeProductReducer(state, action);
+  if (action.type === types.REMOVE_CART_ITEM) {
+    return removeCartItemReducer(state, action);
   }
 
   if (action.type === types.LOCK) {

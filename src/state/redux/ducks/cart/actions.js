@@ -22,8 +22,8 @@ const updateProduct = (productSku, qty) => {
   return { type: types.UPDATE_PRODUCT, sku: productSku, qty: qty };
 };
 
-const removeProduct = productSku => {
-  return { type: types.REMOVE_PRODUCT, sku: productSku };
+const removeCartItem = cartItemId => {
+  return { type: types.REMOVE_CART_ITEM, id: cartItemId };
 };
 
 export default {
@@ -32,5 +32,5 @@ export default {
   updateCart,
   addProduct,
   updateProduct,
-  removeProduct
+  removeCartItem
 };

@@ -2,7 +2,7 @@
 import types from "./types";
 import addToCart from "./middleware/addToCart";
 import updateProduct from "./middleware/updateProduct";
-import removeProduct from "./middleware/removeProduct";
+import removeCartItem from "./middleware/removeCartItem";
 import updateCart from "./middleware/updateCart";
 
 const cartMiddleware = store => {
@@ -20,8 +20,8 @@ const cartMiddleware = store => {
         case types.UPDATE_PRODUCT:
           return updateProduct(store, action);
 
-        case types.REMOVE_PRODUCT:
-          return removeProduct(store, action);
+        case types.REMOVE_CART_ITEM:
+          return removeCartItem(store, action);
 
         default:
           return;
