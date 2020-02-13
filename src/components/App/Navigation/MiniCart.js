@@ -8,14 +8,21 @@ const MiniCart = (props) => {
   return (
     <Link to="/cart" className="nav-link" role="button">
       Cart &nbsp;
-      {props.cart.id && <Badge variant="primary">{props.cart.items.length}</Badge>}
+      {props.cart.id && <Badge variant="primary">{props.cartCount}</Badge>}
     </Link>
   );
 };
 
 const mapStateToProps = state => {
   return {
-    cart: state.cart
+    cart: state.cart,
+    cartCount: ((state) => {
+      let cartCount = 0;
+      state.cart.items.forEach((item) => {
+        cartCount = cartCount + item.quantity;
+      });
+      return cartCount;
+    })(state)
   }
 }
 
