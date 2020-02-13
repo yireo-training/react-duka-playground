@@ -14,7 +14,7 @@ const updateCart = async (store, action) => {
       variables: action
     });
 
-    //console.log('Cart data', queryResult.data.cart.items);
+    console.log('Cart data', queryResult.data.cart.items);
     store.dispatch(
       cartActions.setProducts(action.cartId, queryResult.data.cart.items)
     );
