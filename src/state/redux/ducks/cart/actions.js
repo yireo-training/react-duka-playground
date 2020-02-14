@@ -2,28 +2,28 @@
 import types from "./types";
 
 const setCartId = cartId => {
-  return { type: types.SET_CART_ID, cartId: cartId };
+  return { type: types.SET_CART_ID, cartId };
 };
 
 const setProducts = (cartId, items) => {
-  return { type: types.SET_PRODUCTS, cartId: cartId, items: items };
+  return { type: types.SET_PRODUCTS, cartId, items };
 };
 
 const updateCart = () => {
   return { type: types.UPDATE_CART };
 };
 
-const addProduct = (productSku, qty) => {
+const addProduct = (sku, qty) => {
   if (!qty > 0) qty = 1;
-  return { type: types.ADD_PRODUCT, sku: productSku, qty: qty };
+  return { type: types.ADD_PRODUCT, sku, qty };
 };
 
-const updateProduct = (productSku, qty) => {
-  return { type: types.UPDATE_PRODUCT, sku: productSku, qty: qty };
+const updateProduct = (sku, qty) => {
+  return { type: types.UPDATE_PRODUCT, sku, qty };
 };
 
-const removeCartItem = cartItemId => {
-  return { type: types.REMOVE_CART_ITEM, id: cartItemId };
+const removeCartItem = (id, name) => {
+  return { type: types.REMOVE_CART_ITEM, id, name };
 };
 
 export default {

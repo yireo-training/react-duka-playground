@@ -20,9 +20,8 @@ const removeCartItem = async (store, action) => {
       variables: action
     });
 
-    let messageText = 'Cart item "' + action.id + '" removed';
     store.dispatch(cartActions.updateCart());
-    store.dispatch(messagesActions.addMessage(messageText, "info"));
+    store.dispatch(messagesActions.addMessage('Cart item "' + action.name + '" removed', "info"));
     store.dispatch(commonActions.unlock());
 
   } catch (error) {

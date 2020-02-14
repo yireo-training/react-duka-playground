@@ -1,4 +1,6 @@
 export default (state, action) => {
+  return state;
+  /*
   let products = state.items ? state.items : [];
   let newProducts = [...products];
   
@@ -8,4 +10,5 @@ export default (state, action) => {
   });
 
   return Object.assign({}, state, { items: newProducts });
+  */
 };

@@ -16,6 +16,7 @@ const CartPageReduxContainer = props => {
 
 const mapStateToProps = state => {
   return {
+    cartItems: state.cart.items,
     cartId: state.cart.id,
     locked: state.cart.locked
   };
@@ -26,8 +27,8 @@ const mapDispatchToProps = dispatch => {
     updateCart: () => {
       dispatch(cartActions.updateCart());
     },
-    removeCartItem: id => {
-      dispatch(cartActions.removeCartItem(id));
+    removeCartItem: (id, name) => {
+      dispatch(cartActions.removeCartItem(id, name));
     },
     unLock: () => {
       dispatch(cartActions.unlock());

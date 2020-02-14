@@ -10,7 +10,7 @@ const CartPageQueryContainer = props => {
     props.unLock();
   }
 
-  const { loading, error, data } = useQuery(props.query, { variables: { cartId: props.cartId } });
+  const { loading, error, data } = useQuery(props.query, { variables: { cartId: props.cartId }, pollInterval: 500 });
 
   if (loading) return <Loading />;
   if (error) return <ErrorPage error={error.message} />;

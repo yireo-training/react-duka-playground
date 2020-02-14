@@ -18,9 +18,8 @@ const updateProduct = async (store, action) => {
       ),
       variables: action
     });
-  
-    let messageText = 'Cart item "' + action.sku + '" updated';
-    store.dispatch(messagesActions.addMessage(messageText, "info"));
+
+    store.dispatch(messagesActions.addMessage('Cart item "' + action.sku + '" updated', "info"));
     store.dispatch(commonActions.unlock());
 
   } catch (error) {

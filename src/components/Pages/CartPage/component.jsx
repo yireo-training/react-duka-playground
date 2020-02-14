@@ -22,7 +22,7 @@ const CartPage = props => {
               <td>{item.product.sku}</td>
               <td>{item.quantity}</td>
               <td>
-                <button onClick={() => { props.removeCartItem(item.id) }}>X</button>
+                <button onClick={() => { props.removeCartItem(item.id, item.product.name) }}>X</button>
               </td>
             </tr>
           ))}
