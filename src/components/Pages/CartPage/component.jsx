@@ -2,6 +2,7 @@ import React from "react";
 import Table from "react-bootstrap/Table";
 import PriceBox from "./PriceBox";
 import "./component.css";
+import { Link } from 'react-router-dom';
 
 const CartPage = props => {
   return (
@@ -55,6 +56,7 @@ const CartPage = props => {
         </div>
       </div>
 
+      <Link to="checkout">Checkout</Link>
       <button onClick={props.updateCart}>Update cart</button>
     </div >
   );
