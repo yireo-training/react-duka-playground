@@ -27,7 +27,7 @@ yarn start
 
 ## Architecture
 
-This package is based on `create-react-app`.
+This package is based on `create-react-app`. On top of this, [react-app-rewired](https://github.com/timarney/react-app-rewired) has been used to allow for a local `config-override.js` to extend Webpack, without the need to eject the full configuration.
 
 Redux uses the ducks-standard with 3 ducks (cart, customer, messages) to group action types, action creators, reducers and middleware together.
 
