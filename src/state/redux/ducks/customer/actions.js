@@ -28,6 +28,12 @@ const setCustomerToken = token => {
   };
 };
 
+const createCustomer = customerData => {
+  return Object.assign(customerData, {
+    type: types.CREATE_CUSTOMER
+  });
+};
+
 const saveCustomer = customerData => {
   return Object.assign(customerData, {
     type: types.SAVE_CUSTOMER
@@ -52,6 +58,7 @@ export default {
   logoutCustomer,
   postLogoutCustomer,
   setCustomerToken,
+  createCustomer,
   saveCustomer,
   saveAddress,
   setCustomerData

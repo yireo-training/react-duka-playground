@@ -14,10 +14,7 @@ export default [
   { path: "/customer/orders", component: CustomerPageOrders },
   { path: "/customer/account", component: CustomerPageAccountEdit },
   { path: "/customer/account/edit", component: CustomerPageAccountEdit },
-  {
-    path: "/customer/account/changePassword",
-    component: CustomerPageAccountChangePassword
-  },
+  { path: "/customer/account/changePassword", component: CustomerPageAccountChangePassword },
   { path: "/wishlist", component: WishlistPage },
   { path: "/downloads", component: DownloadsPage }
 ];

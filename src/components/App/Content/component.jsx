@@ -11,10 +11,10 @@ import CartPage from "components/Pages/CartPage";
 import SearchPage from "components/Pages/SearchPage";
 import Page from "components/Pages/Page";
 import Messages from "components/Molecules/Messages";
+import CustomerPageAccountCreate from "components/Pages/CustomerPage/Account/Create";
 
 import customerPages from "./customerPages";
 import "./component.css";
-
 
 const Content = () => {
   return (
@@ -38,6 +38,7 @@ const Content = () => {
         })}
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/logout" component={LogoutPage} />
+        <Route exact path="/customer/account/create" component={CustomerPageAccountCreate} />
         <Route exact path="/customer/account/logout" component={LogoutPage} />
         <Route exact path="/checkout" component={CheckoutPage} />
         <Route exact path="/cart" component={CartPage} />

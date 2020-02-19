@@ -3,6 +3,7 @@ import types from "./types";
 import loginCustomer from "./middleware/loginCustomer";
 import logoutCustomer from "./middleware/logoutCustomer";
 import saveCustomer from "./middleware/saveCustomer";
+import createCustomer from "./middleware/createCustomer";
 import saveAddress from "./middleware/saveAddress";
 import setCustomerToken from "./middleware/setCustomerToken";
 
@@ -17,6 +18,9 @@ export default store => {
 
         case types.LOGOUT_CUSTOMER:
           return logoutCustomer(store, action);
+
+        case types.CREATE_CUSTOMER:
+          return createCustomer(store, action);
 
         case types.SAVE_CUSTOMER:
           return saveCustomer(store, action);

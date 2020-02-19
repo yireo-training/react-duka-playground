@@ -2,23 +2,26 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-const CustomerPageAccountEdit = props => {
-  const customer = props.customerData;
-  const [email, setEmail] = useState(customer.email);
-  const [firstname, setFirstname] = useState(customer.firstname);
-  const [lastname, setLastname] = useState(customer.lastname);
+const CustomerPageAccountCreate = props => {
+  const [email, setEmail] = useState('');
+  const [firstname, setFirstname] = useState('');
+  const [lastname, setLastname] = useState('');
+  const [password, setPassword] = useState('');
+  const [password2, setPassword2] = useState('');
 
   const onSave = () => {
-    props.onSaveCustomer({
+    props.onCreateCustomer({
       email,
       firstname,
-      lastname
+      lastname,
+      password,
+      password2
     });
   };
 
   return (
-    <div className="CustomerAccountEdit">
-      <h1>Edit Account Information</h1>
+    <div className="CustomerAccountCreate">
+      <h1>Create Account</h1>
 
       <Form.Group controlId="email">
         <Form.Label>Email address</Form.Label>
@@ -53,11 +56,33 @@ const CustomerPageAccountEdit = props => {
         />
       </Form.Group>
 
+      <Form.Group controlId="password">
+        <Form.Label>Password</Form.Label>
+        <input
+          required
+          type="password"
+          className="form-control"
+          value={password}
+          onChange={event => setPassword(event.target.value)}
+        />
+      </Form.Group>
+
+      <Form.Group controlId="password2">
+        <Form.Label>Retype Password</Form.Label>
+        <input
+          required
+          type="password"
+          className="form-control"
+          value={password2}
+          onChange={event => setPassword2(event.target.value)}
+        />
+      </Form.Group>
+
       <Button variant="primary" type="submit" onClick={onSave}>
-        Save
+        Create an account
       </Button>
     </div>
   );
 };
 
-export default CustomerPageAccountEdit;
+export default CustomerPageAccountCreate;

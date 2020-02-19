@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import ButtonToolbar from "react-bootstrap/ButtonToolbar";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Loading from "components/Utils/Loading";
+import { Link } from "@reach/router";
 
 const CustomerLoginForm = props => {
   const [loading, setLoading] = useState(false);
@@ -48,14 +49,16 @@ const CustomerLoginForm = props => {
         />
       </Form.Group>
 
-      <ButtonToolbar>
+      <ButtonGroup>
         <Button variant="secondary" onClick={props.onCancel}>
           Cancel
         </Button>
         <Button variant="primary" onClick={onSubmit}>
           Login
         </Button>
-      </ButtonToolbar>
+      </ButtonGroup>
+
+      <p>Don't have an account yet? <Link to="customer/account/create">Create an account</Link></p>
     </Form>
   );
 };

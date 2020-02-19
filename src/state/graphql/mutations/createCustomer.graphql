@@ -5,7 +5,6 @@ mutation createCustomer($firstname: String, $lastname: String, $email: String, $
       lastname: $lastname
       email: $email
       password: $password
-      is_subscribed: true
     }
   ) {
     customer {
@@ -13,7 +12,6 @@ mutation createCustomer($firstname: String, $lastname: String, $email: String, $
       firstname
       lastname
       email
-      is_subscribed
     }
   }
 }
