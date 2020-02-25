@@ -38,8 +38,19 @@ This project uses `plop`, so you can easily create new components using a comman
 
     npm run generate component Example
 
-## Todo
+## Roadmap
+This is not a very active project, mainly because it is a playground for Yireo personally. But if people raise their hands to mention that it is important to them as well, we are happy to add additional effort into it. The roadmap is therefore still limited:
 
+- Finish a basic checkout for Simple Products;
+- Refactor all Apollo and Redux components into hooks, reducing the number of components in the tree and simplifying lots of work as well;
+- Finalize theming logic, so that the core project is easily extendable. Perhaps even add documentation;
+- Move some GraphQL queries and mutations from the Redux middleware into standalone functions, so that they are even reusable without Redux;
+- Shift from Twitter Bootstrap into Material UI. Separating logical components (containers without any HTML) and presentational components (with bindings to specific UI libraries);
+- Move generic code into separate NPM packages, so that a new project is more easily bootstrapped;
+
+## Todo
 - Optimize caching
 - Product options
-- Checkout
+- Checkout flow
+
+... and lots more       
