@@ -47,7 +47,7 @@ This is not a very active project, mainly because it is a playground for Yireo p
 - Move some GraphQL queries and mutations from the Redux middleware into standalone functions, so that they are even reusable without Redux;
 - Shift from Twitter Bootstrap into Material UI. Separating logical components (containers without any HTML) and presentational components (with bindings to specific UI libraries);
 - Move generic code into separate NPM packages, so that a new project is more easily bootstrapped;
-- Investigate a move to NextJS;
+- Investigate a move to NextJS (because of easier routing, a more solid base architecture and Server Side Rendering);
 
 ## Todo
 - Optimize caching
