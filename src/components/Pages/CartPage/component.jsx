@@ -1,13 +1,16 @@
 import React from "react";
 import Table from "react-bootstrap/Table";
-import PriceBox from "./PriceBox";
+import { Link } from "react-router-dom";
+import useCart from "hooks/useCart";
+import CartTotals from "./CartTotals";
 import "./component.css";
-import { Link } from 'react-router-dom';
 
 const CartPage = props => {
   return (
     <div className="CartPage">
-      <h1>Shopping Cart</h1>
+      <h1>
+        Shopping Cart <span>{useCart.useItemsCount()} items</span>
+      </h1>
       <Table striped>
         <thead>
           <tr>
@@ -23,42 +26,24 @@ const CartPage = props => {
               <td>{item.product.sku}</td>
               <td>{item.quantity}</td>
               <td>
-                <button onClick={() => { props.removeCartItem(item.id, item.product.name) }}>X</button>
+                <button
+                  onClick={() => {
+                    props.removeCartItem(item.id, item.product.name);
+                  }}
+                >
+                  X
+                </button>
               </td>
             </tr>
           ))}
         </tbody>
       </Table>
 
-      <div className="bottom">
-        <div className="additional" />
-        <div className="totals">
-          <Table striped>
-            <tbody>
-              <PriceBox
-                label="Subtotal excl. tax"
-                price={props.cart.prices.subtotal_excluding_tax}
-              />
-              <PriceBox
-                label="Subtotal incl. tax with discount"
-                price={props.cart.prices.subtotal_with_discount_excluding_tax}
-              />
-              <PriceBox
-                label="Subtotal incl. tax"
-                price={props.cart.prices.subtotal_including_tax}
-              />
-              <PriceBox
-                label="Grand Total"
-                price={props.cart.prices.grand_total}
-              />
-            </tbody>
-          </Table>
-        </div>
-      </div>
+      {props.cart.prices && <CartTotals prices={props.cart.prices} />}
 
       <Link to="checkout">Checkout</Link>
-      <button onClick={props.updateCart}>Update cart</button>
-    </div >
+      <button onClick={props.updateCart}>Refresh cart</button>
+    </div>
   );
 };
 

@@ -12,11 +12,10 @@ const updateCart = async (store, action) => {
     const result = await apolloClient.query({
       query: loader("../../../../graphql/queries/cart.graphql"),
       variables: action,
-      fetchPolicy: "no-cache"
+      fetchPolicy: "network-only"
     });
 
-    store.dispatch(cartActions.setProducts(action.cartId, result.data.cart.items));
-    //store.dispatch(messagesActions.addMessage('Cart has been synced', "info"));
+    store.dispatch(cartActions.setCart(action.cartId, result.data.cart));
     store.dispatch(commonActions.unlock());
   } catch (error) {
     console.log(error);

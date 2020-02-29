@@ -1,42 +1,32 @@
 import React from "react";
-import { connect } from "react-redux";
-import { loader } from "graphql.macro";
+import { useDispatch, useSelector } from "react-redux";
 import cartActions from "state/redux/ducks/cart/actions";
-import CartPageQueryContainer from "./query-container";
+import CartPage from "./component";
 import EmptyCartPage from "./Empty";
 
 const CartPageReduxContainer = props => {
-  if (!props.cartId) {
-    return <EmptyCartPage {...props} />;
+  const dispatch = useDispatch();
+
+  const reduxProps = {};
+  reduxProps.updateCart = () => {
+    dispatch(cartActions.updateCart());
+  };
+
+  reduxProps.removeCartItem = (id, name) => {
+    dispatch(cartActions.removeCartItem(id, name));
+  };
+
+  reduxProps.unLock = () => {
+    dispatch(cartActions.unlock());
+  };
+
+  reduxProps.cart = useSelector(state => state.cart);
+
+  if (!reduxProps.cart.id) {
+    return <EmptyCartPage {...reduxProps} />;
   }
 
-  const query = loader("state/graphql/queries/cart.graphql");
-  return <CartPageQueryContainer {...props} query={query} />;
+  return <CartPage {...props} {...reduxProps} />;
 };
 
-const mapStateToProps = state => {
-  return {
-    cartItems: state.cart.items,
-    cartId: state.cart.id,
-    locked: state.cart.locked
-  };
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-    updateCart: () => {
-      dispatch(cartActions.updateCart());
-    },
-    removeCartItem: (id, name) => {
-      dispatch(cartActions.removeCartItem(id, name));
-    },
-    unLock: () => {
-      dispatch(cartActions.unlock());
-    }
-  };
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(CartPageReduxContainer);
+export default CartPageReduxContainer;

@@ -5,8 +5,8 @@ const setCartId = cartId => {
   return { type: types.SET_CART_ID, cartId };
 };
 
-const setProducts = (cartId, items) => {
-  return { type: types.SET_PRODUCTS, cartId, items };
+const setCart = (cartId, cart) => {
+  return { type: types.SET_CART, cartId, cart };
 };
 
 const updateCart = () => {
@@ -28,7 +28,7 @@ const removeCartItem = (id, name) => {
 
 export default {
   setCartId,
-  setProducts,
+  setCart,
   updateCart,
   addProduct,
   updateProduct,

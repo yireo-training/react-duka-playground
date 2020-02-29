@@ -1,6 +1,6 @@
 // Action types
 const SET_CART_ID = "apolloPlayground/cart/SET_CART_ID";
-const SET_PRODUCTS = "apolloPlayground/cart/SET_PRODUCTS";
+const SET_CART = "apolloPlayground/cart/SET_CART";
 const UPDATE_CART = "apolloPlayground/cart/UPDATE_CART";
 const ADD_PRODUCT = "apolloPlayground/cart/ADD_PRODUCT";
 const UPDATE_PRODUCT = "apolloPlayground/cart/UPDATE_PRODUCT";
@@ -10,7 +10,7 @@ const UNLOCK = "apolloPlayground/cart/UNLOCK";
 
 export default {
   SET_CART_ID,
-  SET_PRODUCTS,
+  SET_CART,
   UPDATE_CART,
   ADD_PRODUCT,
   UPDATE_PRODUCT,
