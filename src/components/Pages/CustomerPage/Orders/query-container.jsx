@@ -3,9 +3,9 @@ import { loader } from "graphql.macro";
 import Loading from "components/Utils/Loading";
 import ErrorPage from "components/Pages/ErrorPage";
 import Component from "./component";
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from "@apollo/react-hooks";
 
-const query = loader("state/graphql/queries/customerOrders.graphql");
+const query = loader("src/state/graphql/queries/customerOrders.graphql");
 
 const QueryContainer = props => {
   const token = props.customerToken;

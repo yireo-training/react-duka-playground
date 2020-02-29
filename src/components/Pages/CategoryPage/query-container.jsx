@@ -3,14 +3,16 @@ import Loading from "components/Utils/Loading";
 import { loader } from "graphql.macro";
 import ErrorPage from "components/Pages/ErrorPage";
 import CategoryPage from "./component";
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from "@apollo/react-hooks";
 
 const categoryPageQuery = loader(
-  "state/graphql/queries/categoryPage.graphql"
+  "src/state/graphql/queries/categoryPage.graphql"
 );
 
 const CategoryPageQueryContainer = props => {
-  const { loading, error, data } = useQuery(categoryPageQuery, { variables: { id: props.id } });
+  const { loading, error, data } = useQuery(categoryPageQuery, {
+    variables: { id: props.id }
+  });
 
   if (loading) return <Loading />;
   if (error) return <ErrorPage error={error.message} />;

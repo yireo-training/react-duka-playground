@@ -1,5 +1,5 @@
 query ProductPage($url_key: String) {
-  products(filter: { url_key: { like: $url_key } }) {
+  products(filter: { url_key: { eq: $url_key } }) {
     items {
       id
       name
@@ -10,8 +10,7 @@ query ProductPage($url_key: String) {
       description {
         __html: html
       }
-      country_of_manufacture
-      fashion_material
+      manufacturer: country_of_manufacture
       image {
         label
         url
@@ -31,14 +30,16 @@ query ProductPage($url_key: String) {
         }
       }
       type_id
-      ... on SimpleProduct {
-        options {
-         option_id
-          required
-          sort_order
-          title
-        }
-      }
+      ...SimpleProductDetails
     }
+  }
+}
+
+fragment SimpleProductDetails on SimpleProduct {
+  options {
+    option_id
+    required
+    sort_order
+    title
   }
 }

@@ -1,5 +1,0 @@
-query fetchCart {
-    cart {
-        items
-    }
-}

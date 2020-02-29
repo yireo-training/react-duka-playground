@@ -2,12 +2,14 @@ import React from "react";
 import { loader } from "graphql.macro";
 import ErrorPage from "components/Pages/ErrorPage";
 import SearchPage from "./component";
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from "@apollo/react-hooks";
 
-const query = loader("state/graphql/queries/search.graphql");
+const query = loader("src/state/graphql/queries/search.graphql");
 
 const SearchPageQueryContainer = props => {
-  const { loading, error, data } = useQuery(query, { variables: { search: props.search } });
+  const { loading, error, data } = useQuery(query, {
+    variables: { search: props.search }
+  });
 
   if (loading) return <SearchPage />;
   if (error) return <ErrorPage error={error.message} />;

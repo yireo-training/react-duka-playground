@@ -6,15 +6,17 @@ import CategoryPage from "components/Pages/CategoryPage";
 import ProductPage from "components/Pages/ProductPage";
 import CmsPage from "components/Pages/CmsPage";
 import { loader } from "graphql.macro";
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from "@apollo/react-hooks";
 
 const resolveCategoryUrlToIdQuery = loader(
-  "state/graphql/queries/resolveCatalogUrlToId.graphql"
+  "src/state/graphql/queries/resolveCatalogUrlToId.graphql"
 );
 
 const PageQueryContainer = props => {
   const url = props.location.pathname;
-  const { loading, error, data } = useQuery(resolveCategoryUrlToIdQuery, { variables: { url } });
+  const { loading, error, data } = useQuery(resolveCategoryUrlToIdQuery, {
+    variables: { url }
+  });
 
   if (loading) return <Loading />;
   if (error) return <ErrorPage error={error.message} />;

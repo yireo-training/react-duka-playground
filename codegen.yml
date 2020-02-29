@@ -1,0 +1,12 @@
+overwrite: true
+schema: "http://m2.betelgeuse.yr/graphql"
+documents: "src/state/graphql/queries/*.graphql"
+generates:
+  src/codegen/graphql.tsx:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+  src/codegen/graphql.schema.json:
+    plugins:
+      - "introspection"

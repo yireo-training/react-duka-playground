@@ -4,7 +4,7 @@ import Categories from "./component";
 import { useQuery } from '@apollo/react-hooks';
 
 const categoriesQuery = loader(
-  "state/graphql/queries/topLevelCategories.graphql"
+  "src/state/graphql/queries/topLevelCategories.graphql"
 );
 
 const CategoriesQueryContainer = () => {

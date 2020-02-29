@@ -2,22 +2,21 @@ import { ApolloClient } from "apollo-boost";
 import { HttpLink } from "apollo-link-http";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import config from "config.js";
-//import store from "../redux/store";
+import { IntrospectionFragmentMatcher } from "apollo-cache-inmemory";
+import introspectionQueryResultData from "../../../src/codegen/graphql.schema.json";
 
-// @todo: Currently this doesn't work, because localStorage hydration takes place after this ApolloClient initialization
-//const token = store.getState().customer.token;
-const headers = {
-  //authorization: token ? `Bearer ${token}` : ""
-};
+const fragmentMatcher = new IntrospectionFragmentMatcher({
+  introspectionQueryResultData
+});
 
 const httpLink = new HttpLink({
-  uri: config.magento_url + 'graphql',
-  headers: headers
+  uri: config.magento_url + "graphql",
+  headers: {}
 });
 
 const apolloClient = new ApolloClient({
   link: httpLink,
-  cache: new InMemoryCache()
+  cache: new InMemoryCache({ fragmentMatcher })
 });
 
 export default apolloClient;
