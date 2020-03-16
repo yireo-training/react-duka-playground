@@ -8,6 +8,7 @@ A prototype e-commerce project that connects a React app (using Redux, Apollo Cl
 - Adding simple products to cart (without custom options)
 - Create a customer account
 - Login to customer account and modify customer account
+- ElasticSearch 6 search (by simply filling in the `elasticsearch_url` variable in your `src/config.js`)
 
 ## Technical details
 

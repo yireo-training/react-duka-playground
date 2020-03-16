@@ -1,4 +1,5 @@
 export default {
   magento_url: "http://m2.vega.yr/",
   magento_url_suffix: ".html"
+  //elasticsearch_url: "http://your-secure-elasticsearch-url/someindex/_search"
 };
