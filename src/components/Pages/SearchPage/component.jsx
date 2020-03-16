@@ -1,15 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { useQuery } from "@apollo/react-hooks";
-import { loader } from "graphql.macro";
-import ErrorPage from "components/Pages/ErrorPage";
-import ProductGrid from "../../Molecules/ProductGrid";
 import Alert from "react-bootstrap/Alert";
-import Loading from "components/Utils/Loading";
+import SearchPageViaQuery from "./SearchPageViaQuery";
+import SearchPageViaElasticSearch from "./SearchPageViaElasticSearch";
+import config from "../../../config";
 
-const query = loader("src/state/graphql/queries/search.graphql");
-
-const SearchPage = props => {
+const SearchPage = () => {
   const search = useSelector(state => state.search.search);
   let suggestion = "";
 
@@ -17,14 +13,9 @@ const SearchPage = props => {
     suggestion = "Make sure to use more than 2 characters in your search";
   }
 
-  const { loading, error, data } = useQuery(query, {
-    variables: { search: search }
-  });
-
-  if (loading) return <Loading />;
-  if (error) return <ErrorPage error={error.message} />;
-
-  const products = data.products.items;
+  const SearchComponent = config.elasticsearch_url
+    ? SearchPageViaElasticSearch
+    : SearchPageViaQuery;
 
   return (
     <div className="SearchPage">
@@ -33,7 +24,7 @@ const SearchPage = props => {
         <strong>Showing search results for: "{search}"</strong>
       </div>
       {suggestion && <Alert variant="warning">{suggestion}</Alert>}
-      {products && <ProductGrid products={products} />}
+      {search && <SearchComponent search={search} />}
     </div>
   );
 };

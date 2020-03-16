@@ -23,6 +23,7 @@ const Product = props => {
       <Link to={productLink}>
         <h5>{product.name}</h5>
       </Link>
+
       <code>{product.sku}</code>
 
       {product.description && (
