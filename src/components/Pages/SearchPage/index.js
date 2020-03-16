@@ -1,1 +1,1 @@
-export { default } from "./redux-container";
+export { default } from "./component";
