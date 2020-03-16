@@ -6,6 +6,14 @@ A prototype e-commerce project that connects a React app (using Redux, Apollo Cl
 - Navigation showing top-level categories plus second-level categories
 - Showing messages in the message area (with auto-hide)
 - Adding simple products to cart (without custom options)
+- Create a customer account
+- Login to customer account and modify customer account
+
+## Technical details
+
+- React 16 with functional components
+- Redux middleware using Apollo Client to make GraphQL queries and mutations
+- Apollo Client is using introspection to support interfaces and unions with fragments (see notes below)
 
 ## Getting started
 
