@@ -1,15 +1,16 @@
+@import "styles/typography";
 @import "styles/product-grid";
 
 :root {
-    --color-yireo: #c82529;
-    --color-on-yireo: #fff;
+  --color-yireo: #c82529;
+  --color-on-yireo: #fff;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 :any-link {
-    color: var(--color-yireo);
+  color: var(--color-yireo);
 }

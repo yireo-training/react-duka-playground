@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import App from "components/App";
 import "./index.scss";
 import { BrowserRouter } from "react-router-dom";
-import { ApolloProvider } from '@apollo/react-hooks';
+import { ApolloProvider } from "@apollo/react-hooks";
 import { Provider as ReduxProvider } from "react-redux";
 import persistStore from "redux-phoenix";
 
