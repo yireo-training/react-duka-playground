@@ -9,7 +9,7 @@ import persistStore from "redux-phoenix";
 
 import apolloClient from "state/graphql/apollo-client";
 import reduxStore from "state/redux/store";
-import * as serviceWorker from "serviceWorker";
+//import * as serviceWorker from "serviceWorker";
 
 persistStore(reduxStore).then(reduxStore => {
   ReactDOM.render(
@@ -24,4 +24,4 @@ persistStore(reduxStore).then(reduxStore => {
   );
 });
 
-serviceWorker.register();
+//serviceWorker.register();

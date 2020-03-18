@@ -1,5 +1,5 @@
 import React from "react";
-import Table from "react-bootstrap/Table";
+import { Table, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import useCart from "hooks/useCart";
 import CartTotals from "./CartTotals";
@@ -41,8 +41,8 @@ const CartPage = props => {
 
       {props.cart.prices && <CartTotals prices={props.cart.prices} />}
 
-      <Link to="checkout">Checkout</Link>
-      <button onClick={props.updateCart}>Refresh cart</button>
+      <Button href="checkout">Checkout</Button>
+      <Button onClick={props.updateCart}>Refresh</Button>
     </div>
   );
 };

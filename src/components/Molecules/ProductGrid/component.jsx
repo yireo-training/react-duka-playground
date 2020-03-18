@@ -12,7 +12,7 @@ const ProductListing = props => {
     <div className="ProductListing">
       <Row>
         {props.products.map(product => (
-          <Col xs={4} key={product.id}>
+          <Col sm={4} key={product.id}>
             <Item product={product} key={product.id} />
           </Col>
         ))}

@@ -1,9 +1,3 @@
-.HomePage {
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: 3fr 1fr;
-}
-
 .HomePage .sidebar {
     border-left: 1px solid #ccc;
     padding: 10px;
