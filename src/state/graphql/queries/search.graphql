@@ -11,7 +11,6 @@ query Search($search: String) {
         __html: html
       }
       country_of_manufacture
-      fashion_material
       image {
         label
         url
