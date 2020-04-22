@@ -1,13 +1,13 @@
 // Action Creators
 import types from "./types";
 
-const updateSearch = search => {
+export const updateSearch = (search) => {
   return {
     type: types.UPDATE_SEARCH,
-    search: search
+    search: search,
   };
 };
 
 export default {
-  updateSearch
+  updateSearch,
 };

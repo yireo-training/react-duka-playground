@@ -6,10 +6,10 @@ import SearchPageViaElasticSearch from "./SearchPageViaElasticSearch";
 import config from "../../../config";
 
 const SearchPage = () => {
-  const search = useSelector(state => state.search.search);
+  const search = useSelector((state) => state.search.search);
   let suggestion = "";
 
-  if (search.length < 3) {
+  if (!search || search.length < 3) {
     suggestion = "Make sure to use more than 2 characters in your search";
   }
 

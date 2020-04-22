@@ -17,7 +17,7 @@ const addToCart = async (store, action) => {
       mutation: loader(
         "../../../../graphql/mutations/addSimpleProductToCart.graphql"
       ),
-      variables: action
+      variables: action,
     });
 
     let messageText = 'Product "' + action.sku + '" added to cart';

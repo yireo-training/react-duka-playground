@@ -6,17 +6,17 @@ import { IntrospectionFragmentMatcher } from "apollo-cache-inmemory";
 import introspectionQueryResultData from "../../../src/codegen/graphql.schema.json";
 
 const fragmentMatcher = new IntrospectionFragmentMatcher({
-  introspectionQueryResultData
+  introspectionQueryResultData,
 });
 
 const httpLink = new HttpLink({
   uri: config.magento_url + "graphql",
-  headers: {}
+  headers: {},
 });
 
 const apolloClient = new ApolloClient({
   link: httpLink,
-  cache: new InMemoryCache({ fragmentMatcher })
+  cache: new InMemoryCache({ fragmentMatcher }),
 });
 
 export default apolloClient;

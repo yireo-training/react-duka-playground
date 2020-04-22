@@ -1,5 +1,5 @@
 overwrite: true
-schema: "http://m2.betelgeuse.yr/graphql"
+schema: "https://duka.yireo-demo.com/graphql"
 documents: "src/state/graphql/queries/*.graphql"
 generates:
   src/codegen/graphql.tsx:
