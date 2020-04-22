@@ -10,6 +10,9 @@ A prototype e-commerce project that connects a React app (using Redux, Apollo Cl
 - Login to customer account and modify customer account
 - ElasticSearch 6 search (by simply filling in the `elasticsearch_url` variable in your `src/config.js`)
 
+## Demo
+https://duka.yireo-demo.com/
+
 ## Technical details
 
 - React 16 with functional components
