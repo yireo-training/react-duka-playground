@@ -4,10 +4,10 @@ import { withRouter } from "react-router";
 import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/Button";
 
-const QuickSearch = props => {
+const QuickSearch = (props) => {
   const [searchWord, setSearchWord] = useState(props.search);
 
-  const onSearch = event => {
+  const onSearch = (event) => {
     props.history.replace("/search");
     setSearchWord(event.target.value);
     props.onSearch(event.target.value);
@@ -25,7 +25,6 @@ const QuickSearch = props => {
           type="text"
           placeholder="Search"
           className="mr-sm-2"
-          value={searchWord}
           onChange={onSearch}
         />
         <InputGroup.Append>
